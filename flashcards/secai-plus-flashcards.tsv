@@ -1,0 +1,222 @@
+What is supervised learning?	Training a model on labeled input-output pairs so it learns to predict labels for new data; used for classification and regression.	SecAIplus Domain1 MLConcepts
+What is unsupervised learning?	Learning structure/patterns from unlabeled data, e.g. clustering or dimensionality reduction, with no predefined target labels.	SecAIplus Domain1 MLConcepts
+What is reinforcement learning?	An agent learns by interacting with an environment and receiving rewards/penalties to maximize cumulative reward over time.	SecAIplus Domain1 MLConcepts
+What is deep learning?	ML using multi-layer neural networks to learn hierarchical representations from large data; underpins modern vision and language models.	SecAIplus Domain1 MLConcepts
+What is a transformer?	A neural-network architecture using self-attention to process sequences in parallel; the foundation of modern LLMs.	SecAIplus Domain1 LLMConcepts
+What is a foundation model?	A large model pretrained on broad data that can be adapted (fine-tuned or prompted) to many downstream tasks.	SecAIplus Domain1 LLMConcepts
+What are embeddings/vectors?	Numerical vector representations of data that capture semantic meaning; similar items sit close together in vector space.	SecAIplus Domain1 LLMConcepts
+What is a token?	The unit of text (subword/word piece) an LLM processes; input/output length and cost are measured in tokens.	SecAIplus Domain1 LLMConcepts
+What is RAG?	Retrieval-Augmented Generation augments an LLM prompt with relevant documents retrieved from an external store to ground responses.	SecAIplus Domain1 RAG
+What is an AI agent?	An LLM-driven system that plans and takes actions using tools/APIs to achieve goals, often autonomously across multiple steps.	SecAIplus Domain1 Agents
+What is MCP (Model Context Protocol)?	An open protocol standardizing how LLM applications connect to external tools, data sources, and context servers.	SecAIplus Domain1 Agents MCP
+Fine-tuning vs prompting?	Fine-tuning updates model weights on task data; prompting steers a frozen model via instructions/examples at inference with no weight change.	SecAIplus Domain1 LLMConcepts
+What is RLHF?	Reinforcement Learning from Human Feedback aligns a model to human preferences using a reward model trained on human-ranked outputs.	SecAIplus Domain1 LLMConcepts
+What does temperature control in an LLM?	Sampling randomness: low temperature yields focused/deterministic output, high temperature yields more diverse/creative output.	SecAIplus Domain1 LLMConcepts
+What is hallucination?	When an LLM produces fluent but false or fabricated content presented as fact; maps to OWASP LLM09 Misinformation.	SecAIplus Domain1 LLMConcepts
+What is a context window?	The maximum tokens (prompt plus output) a model can consider at once; exceeding it truncates or drops earlier content.	SecAIplus Domain1 LLMConcepts
+Training vs inference?	Training builds/updates model weights from data; inference uses the trained model to generate outputs for new inputs.	SecAIplus Domain1 Architecture
+What is a model registry?	A versioned catalog for storing, tracking, and governing models, their metadata, lineage, and lifecycle stage.	SecAIplus Domain1 Architecture
+What is a feature store?	A central repository for curated, reusable ML features that ensures consistency between training and serving.	SecAIplus Domain1 Architecture
+What is a vector database?	A database optimized to store embeddings and perform similarity (nearest-neighbor) search; the retrieval backbone of RAG.	SecAIplus Domain1 RAG
+What is an AI gateway?	A proxy/control point in front of model endpoints providing auth, rate limiting, routing, guardrails, logging, and policy enforcement.	SecAIplus Domain1 Architecture
+What is MLOps/LLMOps?	Practices and tooling to build, deploy, monitor, and maintain ML/LLM systems reliably across their lifecycle.	SecAIplus Domain1 Architecture
+How does AI expand the attack surface?	It adds data, models, prompts, agents/tools, and the supply chain as new attack vectors, plus non-determinism and data-centric risk.	SecAIplus Domain1 ThreatLandscape
+Why does AI non-determinism matter for security?	Identical inputs can yield different outputs, complicating testing, detection, reproducibility, and deterministic controls.	SecAIplus Domain1 ThreatLandscape
+What is dual-use risk in AI?	The same AI capability can serve beneficial or malicious purposes, e.g. code generation aiding developers or malware authors.	SecAIplus Domain1 ThreatLandscape
+What is the CIA triad applied to AI?	Confidentiality (model/data/prompt secrecy), Integrity (no poisoning/tampering), Availability (resist DoS); AI adds safety, privacy, fairness.	SecAIplus Domain1 Principles
+What is secure-by-design for AI?	Building security and safety into AI from inception (threat modeling, guardrails, least privilege) rather than bolting it on later.	SecAIplus Domain1 Principles
+What are the four NIST AI RMF functions?	Govern, Map, Measure, and Manage.	SecAIplus Domain1 Frameworks NISTAIRMF
+What is MITRE ATLAS?	A knowledge base of adversarial tactics and techniques against AI/ML systems, modeled after MITRE ATT&CK.	SecAIplus Domain1 Frameworks ATLAS
+What is ISO/IEC 42001?	An international standard specifying requirements for an AI Management System (AIMS) for responsible governance of AI.	SecAIplus Domain1 Frameworks ISO42001
+What is Google SAIF?	Secure AI Framework: Google's conceptual framework of best practices for securing AI systems.	SecAIplus Domain1 Frameworks SAIF
+What is the OWASP Top 10 for LLM Applications?	A community-curated list of the most critical security risks in LLM apps; the 2025 edition spans LLM01 through LLM10.	SecAIplus Domain1 Frameworks OWASP
+What is the OWASP ML Security Top 10?	A list of top risks specific to traditional ML systems (e.g. data poisoning, evasion, model theft), distinct from the LLM Top 10.	SecAIplus Domain1 Frameworks OWASP
+What is the NIST GenAI Profile (AI 600-1)?	A companion to the AI RMF addressing risks unique to generative AI and suggested actions to manage them.	SecAIplus Domain1 Frameworks NISTAIRMF
+What is the shared responsibility model for AI?	Security duties split among model provider, platform/deployer, application owner, and end user; the split shifts for SaaS vs self-hosted.	SecAIplus Domain1 SharedResponsibility
+SaaS LLM vs self-hosted responsibility?	With SaaS the provider secures the model/infra while you secure data, prompts, and use; self-hosting puts model, infra, and patching on you.	SecAIplus Domain1 SharedResponsibility
+What is an evasion attack?	Crafting adversarial inputs at inference to cause misclassification while appearing normal to humans, e.g. perturbed images.	SecAIplus Domain2 AdversarialML Evasion
+What is an adversarial example?	An input with small, often imperceptible perturbations engineered to fool a model into a wrong output.	SecAIplus Domain2 AdversarialML
+Evasion vs poisoning?	Evasion attacks the model at inference with crafted inputs; poisoning attacks at training time by corrupting the data.	SecAIplus Domain2 AdversarialML
+What is data poisoning?	Injecting malicious/manipulated samples into training data to degrade performance or implant attacker-chosen behavior; OWASP LLM04.	SecAIplus Domain2 Poisoning OWASP LLM04
+What is a backdoor/trojan model?	A model that behaves normally except when a hidden trigger is present, then produces attacker-chosen output.	SecAIplus Domain2 Poisoning Backdoor
+What is model inversion?	Reconstructing sensitive training-data features (e.g. a face) by querying a model and analyzing its outputs.	SecAIplus Domain2 PrivacyAttacks
+What is model extraction/stealing?	Repeatedly querying a model to replicate its functionality or parameters, stealing IP and enabling offline attacks.	SecAIplus Domain2 ModelExtraction
+What is membership inference?	Determining whether a specific record was in the training set, a privacy breach revealing data inclusion.	SecAIplus Domain2 PrivacyAttacks
+Model inversion vs membership inference?	Inversion reconstructs training-data features/attributes; membership inference only determines if a given record was used in training.	SecAIplus Domain2 PrivacyAttacks
+What is transferability in adversarial ML?	Adversarial examples crafted against one model often fool other models, enabling black-box attacks without target access.	SecAIplus Domain2 AdversarialML
+What is a sponge attack?	Inputs crafted to maximize a model's compute/energy/latency, a resource-exhaustion attack related to unbounded consumption.	SecAIplus Domain2 Availability
+What is prompt injection?	Untrusted input that overrides or manipulates an LLM's instructions to produce attacker-desired behavior; OWASP LLM01.	SecAIplus Domain2 PromptInjection OWASP LLM01
+Direct vs indirect prompt injection?	Direct: the attacker types malicious instructions into the prompt. Indirect: malicious instructions hide in external content the LLM later ingests.	SecAIplus Domain2 PromptInjection
+What is indirect prompt injection?	Malicious instructions embedded in third-party content (web pages, files, emails) that the LLM retrieves and follows, often unknown to the user.	SecAIplus Domain2 PromptInjection
+What is a jailbreak?	A prompt-injection technique that bypasses an LLM's safety guardrails to elicit restricted or harmful output.	SecAIplus Domain2 PromptInjection Jailbreak
+What is system-prompt leakage?	Exposure of the hidden system prompt, revealing secrets, logic, or guardrails an attacker can exploit; OWASP LLM07.	SecAIplus Domain2 OWASP LLM07
+What is improper/insecure output handling?	Downstream systems trusting raw LLM output without validation, enabling XSS, SQLi, SSRF, or RCE; OWASP LLM05.	SecAIplus Domain2 OWASP LLM05
+What is sensitive information disclosure in LLMs?	An LLM revealing PII, secrets, or proprietary data through its outputs; OWASP LLM02.	SecAIplus Domain2 OWASP LLM02
+What is training-data extraction?	Prompting a model to regurgitate memorized training data, potentially exposing PII or copyrighted/secret content.	SecAIplus Domain2 PrivacyAttacks
+What is excessive agency?	Granting an LLM/agent too much functionality, permissions, or autonomy, allowing harmful actions from manipulation; OWASP LLM06.	SecAIplus Domain2 OWASP LLM06 Agents
+What is overreliance on LLM output?	Users or systems trusting AI output without verification, propagating errors, hallucinations, or insecure code; relates to OWASP LLM09.	SecAIplus Domain2 OWASP LLM09
+What is unbounded consumption?	Allowing uncontrolled or excessive inference (queries, tokens, compute) causing DoS, cost harvesting, or model theft; OWASP LLM10.	SecAIplus Domain2 OWASP LLM10
+What is model DoS / cost harvesting?	Driving large volumes of expensive inference to exhaust resources or inflate costs (denial of wallet); part of unbounded consumption.	SecAIplus Domain2 OWASP LLM10 Availability
+What are AI supply-chain risks?	Compromise via poisoned pretrained models, malicious datasets, vulnerable dependencies, or tampered model hubs; OWASP LLM03.	SecAIplus Domain2 SupplyChain OWASP LLM03
+What is unsafe deserialization in ML?	Loading models in formats like Python pickle can execute arbitrary code, enabling RCE from a malicious model file.	SecAIplus Domain2 SupplyChain Deserialization
+Why is the pickle format risky for models?	Pickle can execute arbitrary Python on load, so a malicious model file runs code on import; prefer safetensors.	SecAIplus Domain2 SupplyChain Deserialization
+What is model/package typosquatting?	Publishing malicious models or packages with names resembling popular ones to trick users into downloading them.	SecAIplus Domain2 SupplyChain
+What is model hub/registry compromise?	Attackers tamper with or upload malicious models to a repository so downstream users pull a backdoored model.	SecAIplus Domain2 SupplyChain
+What is a poisoned pretrained model?	A publicly shared model embedded with backdoors or bias that activate under attacker-chosen conditions after adoption.	SecAIplus Domain2 SupplyChain Poisoning
+What is the confused-deputy problem in agents?	An agent with legitimate privileges is tricked by an attacker into misusing its authority on the attacker's behalf.	SecAIplus Domain2 Agents
+What is tool misuse in agentic AI?	Manipulating an agent (often via injection) to invoke its tools/APIs in harmful ways beyond intended use.	SecAIplus Domain2 Agents
+What is SSRF via AI agents?	Tricking an agent into making server-side requests to internal/cloud resources (e.g. metadata endpoints), exposing data or enabling pivoting.	SecAIplus Domain2 Agents SSRF
+What is memory/conversation poisoning?	Injecting malicious content into an agent's persistent memory or conversation history so it influences later actions.	SecAIplus Domain2 Agents Poisoning
+What is multi-agent collusion risk?	Interacting agents can amplify errors or be manipulated to coordinate harmful actions or bypass individual controls.	SecAIplus Domain2 Agents
+What is MCP/tool-server abuse?	A compromised or malicious MCP/tool server feeds harmful data or actions to an agent, or exfiltrates data via tool calls.	SecAIplus Domain2 Agents MCP
+Why is lateral movement a risk with agents?	Agents with network/tool access and credentials can be steered to reach and act on other internal systems, like an attacker foothold.	SecAIplus Domain2 Agents
+What is memorization and regurgitation?	A model storing and later reproducing verbatim training data, risking PII, secret, or copyright exposure.	SecAIplus Domain2 PrivacyAttacks
+What is RAG data leakage / broken document authorization?	RAG retrieving documents a user should not access because retrieval ignores per-document permissions, leaking restricted content.	SecAIplus Domain2 RAG OWASP LLM08
+What is embedding inversion?	Reconstructing original text/data from its stored embedding vectors, a confidentiality risk for vector stores; OWASP LLM08.	SecAIplus Domain2 OWASP LLM08 RAG
+What are vector and embedding weaknesses?	Risks in how embeddings/vector stores are generated, stored, and retrieved: inversion, poisoning, cross-tenant leakage, weak access control; OWASP LLM08.	SecAIplus Domain2 OWASP LLM08 RAG
+What is data exfiltration via LLM outputs?	An attacker uses crafted prompts or injection to make the model encode and emit sensitive data through its responses.	SecAIplus Domain2 PrivacyAttacks
+What is re-identification risk?	Combining model outputs or anonymized data with other information to re-identify specific individuals.	SecAIplus Domain2 PrivacyAttacks
+List the OWASP LLM Top 10 (2025) categories.	LLM01 Prompt Injection; LLM02 Sensitive Information Disclosure; LLM03 Supply Chain; LLM04 Data and Model Poisoning; LLM05 Improper Output Handling; LLM06 Excessive Agency; LLM07 System Prompt Leakage; LLM08 Vector and Embedding Weaknesses; LLM09 Misinformation; LLM10 Unbounded Consumption.	SecAIplus Domain2 OWASP
+What is OWASP LLM01?	Prompt Injection: manipulating LLM behavior via crafted inputs, directly or indirectly.	SecAIplus Domain2 OWASP LLM01
+What is OWASP LLM02?	Sensitive Information Disclosure: exposure of PII, secrets, or proprietary data through model outputs.	SecAIplus Domain2 OWASP LLM02
+What is OWASP LLM03?	Supply Chain: vulnerabilities from third-party models, datasets, plugins, and dependencies.	SecAIplus Domain2 OWASP LLM03
+What is OWASP LLM04?	Data and Model Poisoning: tampering with training, fine-tuning, or embedding data to introduce backdoors or bias.	SecAIplus Domain2 OWASP LLM04
+What is OWASP LLM05?	Improper Output Handling: insufficient validation of LLM output before passing it to downstream systems.	SecAIplus Domain2 OWASP LLM05
+What is OWASP LLM06?	Excessive Agency: harm from an LLM having too much functionality, permissions, or autonomy.	SecAIplus Domain2 OWASP LLM06
+What is OWASP LLM07?	System Prompt Leakage: disclosure of system-prompt contents that exposes secrets or guardrail logic.	SecAIplus Domain2 OWASP LLM07
+What is OWASP LLM08?	Vector and Embedding Weaknesses: security flaws in the embeddings and vector stores used by RAG.	SecAIplus Domain2 OWASP LLM08
+What is OWASP LLM09?	Misinformation: a model producing false or misleading information (including hallucinations) that users may overrely on.	SecAIplus Domain2 OWASP LLM09
+What is OWASP LLM10?	Unbounded Consumption: uncontrolled resource use enabling DoS, cost harvesting, or model extraction.	SecAIplus Domain2 OWASP LLM10
+ML attack vs LLM attack vs infrastructure attack?	ML attacks target model math (evasion/poisoning); LLM attacks target prompts/outputs/agency; infrastructure attacks target serving hosts, registries, and dependencies.	SecAIplus Domain2 Mapping
+Which OWASP risk covers indirect prompt injection?	LLM01 Prompt Injection (the indirect variant via external content).	SecAIplus Domain2 OWASP LLM01
+Which OWASP risk fits a pickle-based RCE in a downloaded model?	LLM03 Supply Chain (a malicious model artifact via unsafe deserialization).	SecAIplus Domain2 OWASP LLM03
+What is data provenance and lineage?	Tracking the origin, transformations, and movement of data through the ML pipeline to verify trust and integrity.	SecAIplus Domain3 DataSecurity
+Defenses against data poisoning?	Vet and curate data sources, validate/sanitize inputs, anomaly/outlier detection, provenance tracking, and dataset access control.	SecAIplus Domain3 Poisoning Defense
+What is differential privacy?	Adding calibrated noise so outputs do not reveal whether any individual's data was included, bounding privacy loss (epsilon).	SecAIplus Domain3 Privacy DifferentialPrivacy
+What is PII minimization for AI?	Collecting and retaining only necessary personal data and removing/redacting PII before training or logging.	SecAIplus Domain3 Privacy
+Why classify data for AI?	Classification drives handling, access controls, and decisions on what may be used for training or sent to external models.	SecAIplus Domain3 DataSecurity
+What is dataset access control?	Restricting who can read or modify training datasets to preserve integrity and prevent poisoning or leakage.	SecAIplus Domain3 DataSecurity Defense
+What is model signing?	Cryptographically signing model artifacts so consumers can verify integrity and authenticity before loading.	SecAIplus Domain3 Integrity
+What is an MLBOM?	A Machine Learning Bill of Materials listing model components, datasets, and dependencies for transparency and supply-chain security.	SecAIplus Domain3 SupplyChain MLBOM
+What are safetensors and why use them?	A safe model serialization format storing only tensors with no executable code, preventing deserialization RCE unlike pickle.	SecAIplus Domain3 SupplyChain
+Why scan models and dependencies?	To detect known vulnerabilities, malware, unsafe serialization, and backdoors in models and their software stack before use.	SecAIplus Domain3 SupplyChain
+What is reproducibility in secure MLOps?	The ability to recreate a model from pinned data, code, and config; supports integrity, auditing, and incident investigation.	SecAIplus Domain3 MLOps
+What is secrets management in MLOps?	Securely storing and injecting API keys, tokens, and credentials via vaults or short-lived tokens rather than hardcoding them.	SecAIplus Domain3 MLOps IAM
+What are input guardrails?	Filters/validators on prompts that block injection, malicious payloads, PII, or policy-violating content before reaching the model.	SecAIplus Domain3 Guardrails
+What are output guardrails?	Controls that validate, filter, redact, or encode model output before it reaches users or downstream systems.	SecAIplus Domain3 Guardrails
+What does an AI gateway enforce?	Centralized authentication, rate limiting, routing, guardrails, logging, and policy across model endpoints.	SecAIplus Domain3 AIGateway
+Why segment networks for AI?	Isolating model-serving and training environments limits lateral movement and contains compromise.	SecAIplus Domain3 Hardening
+What is sandboxing for AI tool execution?	Running agent-invoked code/tools in isolated, least-privilege environments so malicious actions cannot reach the host or network.	SecAIplus Domain3 Hardening Agents
+What is rate limiting for AI endpoints?	Capping request/token volume per user, key, or time window to prevent abuse, DoS, and cost harvesting.	SecAIplus Domain3 Defense OWASP LLM10
+What is content moderation/filtering?	Classifiers that detect and block toxic, harmful, or policy-violating input and output in AI systems.	SecAIplus Domain3 Guardrails
+What is per-agent identity?	Giving each agent its own scoped identity/credentials so its actions are authenticated, authorized, and auditable.	SecAIplus Domain3 IAM Agents
+What is on-behalf-of (OBO) authorization?	An agent acts using the end user's delegated permissions so it cannot exceed what that user is allowed to do.	SecAIplus Domain3 IAM Agents
+What is tool allow-listing?	Restricting an agent to a vetted set of approved tools/actions and denying everything else by default.	SecAIplus Domain3 IAM Agents Defense
+RBAC vs ABAC for AI?	RBAC grants access by role; ABAC grants by attributes (user, resource, context), enabling finer-grained, dynamic policies.	SecAIplus Domain3 IAM
+What is least privilege for AI tools?	Granting agents/tools only the minimum permissions and scope needed, reducing the blast radius of compromise or manipulation.	SecAIplus Domain3 IAM Defense
+How to secure a vector database?	Access control and tenant isolation, encryption, source vetting, and authorization-aware retrieval to prevent leakage and poisoning.	SecAIplus Domain3 RAG
+What is document-level authorization in RAG?	Enforcing per-document/user permissions at retrieval time so users only receive chunks they are authorized to see.	SecAIplus Domain3 RAG Defense
+Defenses against indirect prompt injection in RAG?	Treat retrieved content as untrusted, sanitize/strip instructions, separate data from instructions, vet sources, and apply output guardrails.	SecAIplus Domain3 RAG PromptInjection Defense
+What is index poisoning in RAG?	Inserting malicious documents into the knowledge base so retrieval surfaces attacker content; defend with source vetting and integrity checks.	SecAIplus Domain3 RAG Poisoning
+Why treat LLM output as untrusted?	The model can be manipulated or hallucinate, so output may carry injection or malicious payloads; validate and encode before use.	SecAIplus Domain3 Guardrails
+What is output encoding for LLM apps?	Context-aware escaping of model output (HTML, SQL, shell) so it cannot execute as code in downstream systems.	SecAIplus Domain3 OWASP LLM05 Defense
+What are canary tokens for LLMs?	Unique secret strings planted in prompts/data; their appearance in outputs or logs signals leakage or injection.	SecAIplus Domain3 Detection
+What is prompt hardening/templating?	Structuring prompts to clearly separate trusted instructions from user data and constrain model behavior to reduce injection.	SecAIplus Domain3 PromptInjection Defense
+What is input sanitization for prompts?	Cleaning, normalizing, and filtering user input to remove injection patterns and malicious payloads before the model processes it.	SecAIplus Domain3 PromptInjection Defense
+What is human-in-the-loop (HITL)?	Requiring human review and approval before an AI executes high-impact or irreversible actions.	SecAIplus Domain3 Defense
+What is PII redaction in pipelines?	Detecting and removing or masking personal data from prompts, logs, and training data to limit exposure.	SecAIplus Domain3 Privacy Defense
+Defense for OWASP LLM01 Prompt Injection?	Input/output guardrails, instruction-data separation, least privilege, HITL approvals, and treating all external content as untrusted.	SecAIplus Domain3 OWASP LLM01 Defense
+Defense for OWASP LLM02 Sensitive Information Disclosure?	Data minimization, PII redaction/scrubbing, output filtering, access controls, and limiting sensitive data in training and prompts.	SecAIplus Domain3 OWASP LLM02 Defense
+Defense for OWASP LLM03 Supply Chain?	Vet sources, verify signatures, scan models, use safetensors, maintain an MLBOM, and pin dependencies.	SecAIplus Domain3 OWASP LLM03 Defense
+Defense for OWASP LLM04 Data and Model Poisoning?	Data provenance, validation/sanitization, anomaly detection, access control, and integrity verification of datasets and models.	SecAIplus Domain3 OWASP LLM04 Defense
+Defense for OWASP LLM05 Improper Output Handling?	Treat output as untrusted: validate, sanitize, context-aware encode, and parameterize before use in downstream systems.	SecAIplus Domain3 OWASP LLM05 Defense
+Defense for OWASP LLM06 Excessive Agency?	Least-privilege tools/permissions, limit functionality, require human approval for high-impact actions, and scope agent access.	SecAIplus Domain3 OWASP LLM06 Defense
+Defense for OWASP LLM07 System Prompt Leakage?	Do not put secrets in the system prompt; enforce controls outside the model; assume the prompt can leak.	SecAIplus Domain3 OWASP LLM07 Defense
+Defense for OWASP LLM08 Vector and Embedding Weaknesses?	Access control and tenant isolation on vector stores, authorization-aware retrieval, encryption, and data validation.	SecAIplus Domain3 OWASP LLM08 Defense
+Defense for OWASP LLM09 Misinformation?	Grounding via RAG, citations, output verification, human oversight, and user disclaimers to avoid overreliance.	SecAIplus Domain3 OWASP LLM09 Defense
+Defense for OWASP LLM10 Unbounded Consumption?	Rate limiting, token quotas and budgets, input size caps, timeouts, monitoring, and per-user/key throttling.	SecAIplus Domain3 OWASP LLM10 Defense
+What is AI red teaming?	Structured adversarial testing of AI to find safety and security failures (jailbreaks, injection, harmful output) before attackers do.	SecAIplus Domain3 RedTeam
+What are evals?	Automated, repeatable tests/benchmarks measuring model quality, safety, and security across defined scenarios.	SecAIplus Domain3 Evals
+Why regression-test AI safety?	To ensure model or prompt updates do not reintroduce vulnerabilities or degrade safety guardrails.	SecAIplus Domain3 Evals
+What is continuous evaluation in CI/CD for AI?	Running security and safety evals automatically on each model or prompt change to catch regressions before deployment.	SecAIplus Domain3 Evals
+What is model validation before deployment?	Verifying a model's performance, safety, robustness, and integrity meet thresholds prior to release.	SecAIplus Domain3 Evals
+What does NIST AI RMF Govern do?	Establishes organizational culture, policies, accountability, and processes for managing AI risk across the lifecycle.	SecAIplus Domain4 NISTAIRMF
+What does NIST AI RMF Map do?	Establishes context and identifies and frames the risks of the AI system and its use.	SecAIplus Domain4 NISTAIRMF
+What does NIST AI RMF Measure do?	Analyzes, assesses, benchmarks, and monitors AI risks using quantitative and qualitative methods.	SecAIplus Domain4 NISTAIRMF
+What does NIST AI RMF Manage do?	Prioritizes and acts on risks: allocating resources, treating, and responding over time.	SecAIplus Domain4 NISTAIRMF
+NIST AI RMF vs ISO/IEC 42001?	AI RMF is a voluntary US risk-management framework (Govern/Map/Measure/Manage); ISO 42001 is a certifiable management-system standard.	SecAIplus Domain4 Frameworks
+What is ISO/IEC 42001?	A standard for an AI Management System (AIMS): governance requirements to develop and use AI responsibly, certifiable like ISO 27001.	SecAIplus Domain4 ISO42001
+What are the EU AI Act risk tiers?	Prohibited (unacceptable), High, Limited (transparency obligations), and Minimal risk.	SecAIplus Domain4 EUAIAct
+What are prohibited AI practices under the EU AI Act?	Unacceptable-risk uses banned outright, e.g. social scoring and certain manipulative or untargeted biometric practices.	SecAIplus Domain4 EUAIAct
+What are high-risk systems under the EU AI Act?	Systems in sensitive domains (e.g. critical infrastructure, employment, biometrics) subject to strict requirements like risk management, data governance, and oversight.	SecAIplus Domain4 EUAIAct
+What are limited-risk obligations under the EU AI Act?	Transparency duties, e.g. telling users they are interacting with AI or labeling AI-generated content.	SecAIplus Domain4 EUAIAct
+What is record-keeping under the EU AI Act?	High-risk systems must maintain logs and technical documentation for traceability and compliance audits.	SecAIplus Domain4 EUAIAct
+What is a transparency/disclosure obligation?	A requirement to inform users when they interact with AI or consume AI-generated content (e.g. EU AI Act limited-risk).	SecAIplus Domain4 EUAIAct
+GDPR and automated decision-making?	GDPR Article 22 restricts solely automated decisions with legal or significant effects and grants rights to information, human review, and contesting.	SecAIplus Domain4 GDPR
+What is a model card?	Documentation of a model's purpose, training data, performance, limitations, and ethical considerations for transparency.	SecAIplus Domain4 Documentation
+Model card vs datasheet?	A model card documents a model's behavior and limits; a datasheet documents a dataset's composition, collection, and intended use.	SecAIplus Domain4 Documentation
+What is a system card?	Documentation describing a broader AI system's components, safety evaluations, and risk mitigations beyond a single model.	SecAIplus Domain4 Documentation
+What is an AI impact assessment?	A structured evaluation of an AI system's potential effects on rights, safety, fairness, and society before or during deployment.	SecAIplus Domain4 RiskManagement
+What is an AI risk register?	A living record of identified AI risks with likelihood, impact, owners, and treatment status.	SecAIplus Domain4 RiskManagement
+What is risk acceptance for AI?	A documented decision by an accountable owner to tolerate a residual risk within defined thresholds.	SecAIplus Domain4 RiskManagement
+What is acceptable-risk determination?	Defining thresholds for which AI risks are tolerable given benefits, context, and legal requirements.	SecAIplus Domain4 RiskManagement
+What is third-party/model risk?	Risk from external models, datasets, and AI vendors (provenance, licensing, security, reliability) you do not directly control.	SecAIplus Domain4 RiskManagement SupplyChain
+What is model provenance?	A verifiable record of a model's origin, training data, and modifications supporting trust and licensing compliance.	SecAIplus Domain4 SupplyChain
+Why review model licensing/EULA?	To ensure usage rights, commercial-use terms, and data licensing comply with how you deploy the model.	SecAIplus Domain4 SupplyChain
+What is data licensing risk for AI?	Using training or RAG data without proper rights can create IP, privacy, and compliance liabilities.	SecAIplus Domain4 SupplyChain
+Open vs closed model risk tradeoffs?	Open/self-hosted models give control and inspectability but shift security/patching to you; closed/API models offload infra but reduce transparency and add vendor dependence.	SecAIplus Domain4 SupplyChain
+What is third-party AI vendor assessment?	Evaluating an AI vendor's security, privacy, compliance, data handling, and model practices before procurement.	SecAIplus Domain4 SupplyChain
+What are bias sources in AI?	Biased training data, sampling, labeling, feature choice, proxy variables, and human or historical bias baked into data.	SecAIplus Domain4 Fairness Bias
+What are fairness metrics?	Quantitative measures of bias across groups, e.g. demographic parity, equalized odds, and equal opportunity.	SecAIplus Domain4 Fairness
+What is explainability/XAI?	Techniques making model decisions understandable to humans (e.g. feature attribution like SHAP or LIME) for trust and accountability.	SecAIplus Domain4 Fairness XAI
+What is contestability in AI?	The ability for affected individuals to challenge or appeal an AI-driven decision.	SecAIplus Domain4 Fairness
+Bias/variance vs fairness?	Bias and variance are sources of model error; fairness concerns equitable outcomes across protected groups, a related but distinct issue.	SecAIplus Domain4 Fairness
+What is a responsible-AI program?	Organizational structures (committees, policies, roles) ensuring AI is developed and used ethically, safely, and lawfully.	SecAIplus Domain4 Governance
+What are the OECD AI Principles?	International principles for trustworthy AI: inclusive growth, human-centered values, transparency, robustness/safety, and accountability.	SecAIplus Domain4 Governance OECD
+What is shadow AI?	Unsanctioned use of AI tools/services by employees outside governance, risking data leakage and compliance gaps.	SecAIplus Domain4 Policy ShadowAI
+What is an enterprise AI acceptable use policy?	Rules defining approved AI tools, allowed data, prohibited uses, and approval workflows for employees.	SecAIplus Domain4 Policy
+What is DLP for generative AI?	Controls that detect and block sensitive data from being pasted or sent into external AI tools.	SecAIplus Domain4 Policy DLP
+Which framework certifies an AI management system?	ISO/IEC 42001.	SecAIplus Domain4 ISO42001
+Which framework maps adversarial AI attack techniques?	MITRE ATLAS.	SecAIplus Domain4 Frameworks ATLAS
+Which framework lists top LLM application risks?	The OWASP Top 10 for LLM Applications (2025).	SecAIplus Domain4 Frameworks OWASP
+Which framework provides Govern, Map, Measure, Manage?	The NIST AI Risk Management Framework (AI RMF).	SecAIplus Domain4 Frameworks NISTAIRMF
+What should AI prompt/response logging capture?	Prompts, responses, tool calls, user/session identity, timestamps, and decisions, privacy-aware and tamper-resistant for audit and detection.	SecAIplus Domain5 Logging
+Why log tool calls in agentic systems?	To audit what actions an agent took, detect misuse or confused-deputy abuse, and support incident investigation.	SecAIplus Domain5 Logging Agents
+What is privacy-aware logging for AI?	Redacting or minimizing PII and secrets in logs while retaining enough signal for security monitoring.	SecAIplus Domain5 Logging Privacy
+What is audit trail integrity for AI?	Tamper-evident, retained logs of AI decisions and actions to support investigations and compliance.	SecAIplus Domain5 Logging
+What is model drift?	Degradation of model performance over time as real-world data diverges from training data; monitored for reliability and security.	SecAIplus Domain5 Monitoring
+Data drift vs concept drift?	Data drift is a change in the input distribution; concept drift is a change in the input-output relationship the model learned.	SecAIplus Domain5 Monitoring
+What is drift monitoring's security value?	Sudden drift can signal poisoning, attack, or data tampering, not just natural model decay.	SecAIplus Domain5 Monitoring
+What is observability for AI systems?	End-to-end telemetry (traces, metrics, logs) of prompts, retrievals, tool calls, and outputs for monitoring and debugging.	SecAIplus Domain5 Monitoring
+What is cost/usage monitoring for AI?	Tracking token and compute spend per user or app to detect abuse, anomalies, and unbounded consumption.	SecAIplus Domain5 Monitoring OWASP LLM10
+How to detect prompt injection?	Input/output classifiers, anomaly detection, canary tokens, instruction-pattern matching, and monitoring for guardrail-bypass behavior.	SecAIplus Domain5 Detection PromptInjection
+What is jailbreak detection?	Identifying inputs/outputs that attempt to bypass safety guardrails via classifiers, signatures, and behavioral monitoring.	SecAIplus Domain5 Detection
+What is anomaly detection in AI ops?	Flagging unusual prompts, outputs, query volumes, or tool calls that deviate from baselines to surface attacks.	SecAIplus Domain5 Detection
+What are honeytokens/canaries in AI ops?	Decoy secrets or data planted to trigger alerts when accessed or leaked, revealing compromise or exfiltration.	SecAIplus Domain5 Detection
+What is SIEM integration for AI?	Feeding AI logs and telemetry into a SIEM to correlate, alert, and run detections alongside other security data.	SecAIplus Domain5 Detection SIEM
+What are ATLAS-mapped detections?	Detection rules aligned to MITRE ATLAS adversarial techniques to recognize known AI attack behaviors.	SecAIplus Domain5 Detection ATLAS
+What is detection engineering for AI?	Building and tuning detections (rules, classifiers) for AI-specific attacks and integrating them into monitoring.	SecAIplus Domain5 Detection
+What telemetry detects excessive-agency abuse?	Tool-call logs, permission-use anomalies, and out-of-policy action attempts by the agent.	SecAIplus Domain5 Detection Agents
+What is threat hunting for AI systems?	Proactively searching logs and telemetry for signs of injection, abuse, or compromise not caught by alerts.	SecAIplus Domain5 Detection
+What changes in an AI-aware IR lifecycle?	Standard IR phases plus AI-specific containment (disable model/tool, revoke keys), model rollback, and prompt or data-leak handling.	SecAIplus Domain5 IncidentResponse
+AI incident containment actions?	Disable the model/tool, revoke API keys and credentials, trigger a kill switch, and isolate affected pipelines.	SecAIplus Domain5 IncidentResponse
+What is a model kill switch?	A control to immediately disable a model/agent or its tool access to halt harmful behavior.	SecAIplus Domain5 IncidentResponse
+Why revoke/rotate keys during AI incidents?	To cut off attacker access via compromised credentials and stop abuse of model and tool endpoints.	SecAIplus Domain5 IncidentResponse
+What is an AI incident playbook?	A predefined procedure for responding to specific AI incidents (jailbreak, data leak, poisoning) with roles and steps.	SecAIplus Domain5 IncidentResponse
+How to respond to a prompt-injection incident?	Contain the affected flow, identify the injection source, patch inputs and guardrails, rotate exposed secrets, and review logs.	SecAIplus Domain5 IncidentResponse PromptInjection
+How to respond to PII exposure via an LLM?	Contain the output, assess scope, notify per regulation, rotate exposed secrets, and remediate the source (training data, RAG, or prompt).	SecAIplus Domain5 IncidentResponse Privacy
+How to respond to system-prompt leakage?	Rotate any exposed secrets, move sensitive logic and controls outside the prompt, patch the leak vector, and review for downstream abuse.	SecAIplus Domain5 IncidentResponse OWASP LLM07
+How to respond to a poisoned-model discovery?	Roll back to a trusted version, quarantine the artifact, trace provenance, retrain on clean data, and tighten supply-chain controls.	SecAIplus Domain5 IncidentResponse Poisoning
+What is model rollback?	Reverting to a previous trusted model version after a compromise, poisoning, or faulty deployment.	SecAIplus Domain5 Resilience
+What backups matter for AI continuity?	Versioned backups of models, vector indexes, prompts, and configs to enable restore and rollback.	SecAIplus Domain5 Resilience
+What is graceful degradation for AI?	Designing systems to fall back to safe, limited functionality when the AI fails or is under attack, preserving core service.	SecAIplus Domain5 Resilience
+What is failover for AI services?	Routing to redundant models, endpoints, or providers when the primary fails to maintain availability.	SecAIplus Domain5 Resilience
+What is business continuity for AI?	Planning to keep critical AI-dependent services running during outages or attacks, including fallbacks and recovery objectives.	SecAIplus Domain5 Resilience
+Defense against cost bombing / denial of wallet?	Rate limits, token and spend budgets with alerts, per-key quotas, anomaly detection, and auto-throttling.	SecAIplus Domain5 Resilience OWASP LLM10
+What is AI vulnerability management?	Identifying, tracking, prioritizing, and remediating vulnerabilities in models, dependencies, and AI infrastructure.	SecAIplus Domain5 VulnManagement
+Why patch/update models?	To fix discovered vulnerabilities, jailbreak bypasses, and dependency CVEs, and to remove unsafe behaviors.	SecAIplus Domain5 VulnManagement
+What is AI vulnerability disclosure?	A process for researchers to responsibly report AI flaws (jailbreaks, leaks) so they can be fixed.	SecAIplus Domain5 VulnManagement
+What is AI threat intelligence?	Gathering and applying intel on emerging AI attack techniques, malicious models, and jailbreaks to inform defenses.	SecAIplus Domain5 ThreatIntel
+What is purple teaming for AI?	Collaborative red and blue team exercises to test and improve AI detection and response together.	SecAIplus Domain5 PurpleTeam
+What is a post-incident review for AI?	Structured analysis after an AI incident to capture root cause, lessons, and improvements to controls and detections.	SecAIplus Domain5 ContinuousImprovement
+What is a continuous-improvement feedback loop for AI security?	Feeding incident, red-team, and eval findings back into controls, detections, and training to reduce recurrence.	SecAIplus Domain5 ContinuousImprovement
