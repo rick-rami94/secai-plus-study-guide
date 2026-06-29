@@ -1,643 +1,373 @@
-# CompTIA SecAI+ — Practice Test 2 (Unofficial)
+# CompTIA SecAI+ (CY0-001) — Practice Test 2 (Unofficial / Community)
 
-> ⚠️ **UNOFFICIAL / COMMUNITY-MAINTAINED.** This practice test is a study aid. It is **not** affiliated with, endorsed by, or sourced from CompTIA. Questions are original, exam-*realistic* (not exam-identical), and mapped to the community [`../exam-objectives.md`](../exam-objectives.md). Where the official CompTIA objectives differ, the official document wins.
+> ⚠️ **UNOFFICIAL & COMMUNITY-MAINTAINED.** This practice test is a study aid. It is **not** affiliated with, endorsed by, or sourced from CompTIA, and it is **exam-realistic, not exam-identical** — it contains no official or actual exam items. Always reconcile with the official CompTIA SecAI+ objectives. Blueprint: [`../exam-objectives.md`](../exam-objectives.md).
 
-**Instructions**
+**Instructions:** 60 questions • 60 minutes • single best answer (choose ONE). Each question is tagged with its official objective in brackets, e.g., `[2.2]`. Passing score on the real exam is **600 on a 100–900 scale**; as a study heuristic, aim for **~75%+ correct (≈ 45 of 60)** before sitting the exam. Answers and explanations are in [`practice-test-2-answers.md`](practice-test-2-answers.md) — try the whole test before checking.
 
-- **90 questions**, single best answer (A–D).
-- Suggested time limit: **165 minutes**.
-- Target passing score: **~750/900 ≈ 83%** (community estimate) — aim for **75 / 90 correct**.
-- Each question is tagged with its objective, e.g., `[2.2]`.
-- Answers and explanations: [`practice-test-2-answers.md`](practice-test-2-answers.md).
+Domain mix (per the official weightings): Domain 1 = 10 • Domain 2 = 24 • Domain 3 = 14 • Domain 4 = 12.
 
 ---
 
-**1.** [1.1] A developer submits the *identical* prompt to a production LLM twice within a minute and receives two materially different completions. Which factor MOST directly explains this nondeterministic behavior?
+**1.** [1.1] A fraud team has very few examples of confirmed fraudulent transactions. They train two neural networks together — one generates synthetic transaction records and the other tries to distinguish the synthetic records from real ones — until the generator produces realistic samples that augment the training set. Which AI technique is this?
+- A. Generative adversarial network (GAN)
+- B. Reinforcement learning
+- C. Federated learning
+- D. Supervised linear regression
 
-- A. A nonzero temperature/sampling setting introduces probabilistic token selection
-- B. The model is retrained on each request, altering its weights between calls
-- C. The tokenizer maps the identical prompt to different token IDs on each run
-- D. RLHF was applied during the model's fine-tuning phase
+**2.** [2.1] A security architect wants a community-maintained, openly published repository that catalogs over a thousand AI risks extracted from existing frameworks and academic literature, organized by causal factors and risk domains, to seed an enterprise AI risk assessment. Which resource BEST fits this need?
+- A. OWASP Top 10 for LLM Applications
+- B. MITRE ATLAS
+- C. MIT AI Risk Repository
+- D. CVE AI Working Group
 
-**2.** [2.1] A security team observes that an image classifier reliably misidentifies stop signs after attackers place small, near-imperceptible sticker patterns on them. The model itself was never retrained. Which attack class BEST describes this?
+**3.** [1.3] In a clinical decision-support deployment, every AI-generated treatment suggestion must be reviewed and explicitly approved by a licensed clinician before it can reach a patient. Which human-centric AI design principle does this requirement embody?
+- A. Data lineage tracking
+- B. Federated learning
+- C. Model quantization
+- D. Human-in-the-loop
 
-- A. Data poisoning of the training set
-- B. Evasion using adversarial examples at inference time
-- C. Model inversion to reconstruct training images
-- D. Membership inference against the training set
+**4.** [2.2] A development team needs an LLM endpoint to return only responses that conform to a fixed JSON schema, automatically rejecting or regenerating any output that deviates, to curb insecure output handling downstream. Which control BEST enforces this?
+- A. Per-key rate limiting
+- B. Model guardrails with output-schema validation
+- C. Encryption of responses at rest
+- D. Network segmentation of the inference host
 
-**3.** [3.1] A regulated lender must be able to prove, for any deployed model, exactly which datasets and transformations produced it. Which control BEST satisfies this requirement?
-
-- A. Encrypting the model weights at rest in the registry
-- B. Restricting inference access with per-user API keys
-- C. Load-testing the model before each release
-- D. Maintaining data provenance and lineage records with integrity verification
-
-**4.** [4.1] An organization adopting the NIST AI RMF wants to first establish the context of an AI system and identify its risks and intended use before measuring anything. Which RMF function covers this activity?
-
-- A. Govern
-- B. Manage
-- C. Map
-- D. Measure
-
-**5.** [5.1] An incident responder needs to reconstruct exactly which external tools an AI agent invoked, with what parameters, during a suspicious session. Which logging practice BEST enables this?
-
-- A. Logging only the agent's final natural-language response to the user
-- B. Capturing tool-call (function-invocation) logs including tool name and arguments
-- C. Recording only aggregate request counts per hour
-- D. Storing only the system prompt used to initialize the agent
-
-**6.** [1.2] In a Retrieval-Augmented Generation (RAG) architecture, which component stores document embeddings and serves nearest-neighbor similarity search at query time?
-
-- A. Vector database
-- B. Model registry
-- C. Feature store
-- D. AI gateway
-
-**7.** [2.2] An LLM-powered assistant summarizes web pages on request. An attacker publishes a page containing hidden text instructing the assistant to email the user's session data to an external address. When a victim summarizes the page, the assistant complies. Which attack is this?
-
-- A. Direct prompt injection by the victim user
-- B. A jailbreak using roleplay framing
-- C. Model extraction via repeated queries
-- D. Indirect prompt injection via attacker-controlled retrieved content
-
-**8.** [3.2] A team distributes trained model weights and wants a serialization format that cannot execute arbitrary code when a file is loaded. Which format BEST meets this requirement?
-
-- A. Python pickle (.pkl)
-- B. A compressed pickle inside a ZIP archive
-- C. safetensors
-- D. A self-extracting executable bundling the weights
-
-**9.** [4.2] A model owner must publish a concise document describing a model's intended use, training data characteristics, performance, and known limitations for downstream stakeholders. Which artifact is this?
-
-- A. Model card
-- B. Risk register entry
-- C. Software bill of materials (SBOM)
-- D. End-user license agreement (EULA)
-
-**10.** [5.2] A SOC wants automated detection of inputs that attempt to override an LLM's system instructions or coax it into restricted behavior. Which capability is MOST appropriate?
-
-- A. Disk-utilization threshold monitoring on the inference host
-- B. A prompt-injection/jailbreak detection classifier applied to incoming prompts
-- C. TLS certificate expiry monitoring for the API endpoint
-- D. Static code analysis of the front-end application
-
-**11.** [1.3] Compared with traditional software, which characteristic of AI systems MOST complicates signature-based defenses and fixed test oracles?
-
-- A. AI systems always consume less compute than traditional software
-- B. AI systems behave fully deterministically across all inputs
-- C. AI systems never depend on third-party components
-- D. Non-deterministic, data-centric behavior expands and shifts the attack surface
-
-**12.** [2.3] A data scientist downloads a popular pretrained model as a `.bin` file from a public hub. Loading it immediately runs attacker code on the workstation. Which vulnerability was exploited?
-
-- A. Membership inference against the model
-- B. Adversarial perturbation of inputs
-- C. Unsafe deserialization (e.g., pickle) leading to code execution on load
-- D. Excessive agency in the model's tool permissions
-
-**13.** [3.3] An LLM inference endpoint is being hit with floods of expensive requests, driving up cost and latency for legitimate users. Which deployment control BEST mitigates this?
-
-- A. Adding a CAPTCHA only to the account-signup page
-- B. Rate limiting and per-user quotas enforced at the AI gateway
-- C. Encrypting request payloads in transit with TLS
-- D. Disabling request logging to reduce overhead
-
-**14.** [4.3] Under the EU AI Act, an AI system that controls safety functions in critical infrastructure is MOST likely categorized in which risk tier?
-
-- A. Minimal risk
-- B. Limited risk
-- C. High risk
-- D. Prohibited
-
-**15.** [5.3] A monitoring alert shows an AI agent's API key is being abused from an unfamiliar IP, performing rapid privileged tool calls. What is the BEST FIRST containment action?
-
-- A. Revoke/rotate the compromised API key and disable the affected tool
-- B. Retrain the underlying model on clean data
-- C. Increase the agent's rate limit to absorb the traffic
-- D. Schedule a post-incident review for next quarter
-
-**16.** [1.4] Which framework is specifically a curated knowledge base of real-world adversary tactics and techniques targeting AI/ML systems?
-
-- A. NIST AI RMF
-- B. ISO/IEC 42001
-- C. OWASP Top 10 for LLM Applications
-- D. MITRE ATLAS
-
-**17.** [2.4] An autonomous agent holds broad internal permissions. An attacker crafts a request that causes the agent to use its privileged database tool to read records the *requesting user* should never access. Which risk does this BEST illustrate?
-
-- A. Excessive agency / confused-deputy tool misuse
-- B. Membership inference against training data
-- C. A sponge attack on the inference server
-- D. Model inversion of the embeddings
-
-**18.** [3.4] A multi-tenant AI agent performs actions for many users. To preserve least privilege and accountability, how should it authorize downstream calls?
-
-- A. Use one shared service account with full privileges for all users
-- B. Carry per-agent identity with on-behalf-of (OBO) delegation of the user's scope
-- C. Disable authentication on internal tool calls to reduce latency
-- D. Embed a long-lived admin token directly in the system prompt
-
-**19.** [4.4] A bank must explain to a regulator why its model denied a specific applicant. Which technique BEST provides per-prediction transparency?
-
-- A. Reporting the model's aggregate accuracy on the test set
-- B. Retaining immutable audit logs that a decision was made
-- C. Publishing the model card's intended-use section
-- D. Explainability methods such as SHAP or LIME for individual predictions
-
-**20.** [5.4] An application depends on a single external LLM provider. Leadership wants the service to remain usable, with reduced capability, if that provider goes down. Which design BEST achieves this?
-
-- A. Caching only static error pages to display during outages
-- B. Hard-failing the entire application when the provider is unreachable
-- C. Graceful degradation with automatic failover to a backup model
-- D. Logging provider outages to a dashboard for later review
-
-**21.** [1.5] An enterprise consumes a closed LLM purely through the provider's hosted API. Under the shared responsibility model, who is primarily responsible for securing the underlying model weights and serving infrastructure?
-
-- A. The model provider
-- B. The end user submitting prompts
-- C. The enterprise's help-desk team
-- D. The browser vendor
-
-**22.** [2.5] An attacker repeatedly queries a deployed model to determine whether one specific person's record was part of its training data. Which attack is this?
-
-- A. Model inversion
-- B. Membership inference
-- C. Model extraction/stealing
-- D. Evasion via adversarial examples
-
-**23.** [3.5] A RAG-based HR assistant returns salary documents to employees who lack clearance to view them. Which control MOST directly fixes this?
-
-- A. Encrypting the documents at rest in the index
-- B. Adding a confidentiality disclaimer to each chatbot response
-- C. Logging which documents were retrieved for each query
-- D. Enforcing document-level authorization at retrieval time
-
-**24.** [4.5] Before deploying an open-weight model commercially, a company's legal team must confirm one thing FIRST. Which is it?
-
-- A. Whether the model can be quantized for cheaper serving
-- B. Which cloud region will host the workload
-- C. The model license and usage rights permit commercial deployment
-- D. How the model ranks on public benchmark leaderboards
-
-**25.** [5.5] A security program pairs offensive testers and defensive analysts to collaboratively improve AI detections through shared findings. Which practice is this?
-
-- A. Purple teaming with feedback loops to strengthen detections
-- B. Penetration testing performed in isolation by an outside vendor
-- C. A tabletop exercise with no technical execution
-- D. Static application security testing (SAST) only
-
-**26.** [1.1] In an enterprise knowledge assistant, what is the PRIMARY security-relevant benefit of using RAG instead of relying on the base model alone?
-
-- A. It permanently removes the model's ability to hallucinate
-- B. It grounds responses in retrieved, authoritative data, reducing hallucination
-- C. It eliminates the need for any access controls on source documents
-- D. It removes the need to monitor model outputs for accuracy
-
-**27.** [2.6] In the OWASP Top 10 for LLM Applications (2025), which identifier corresponds to **Prompt Injection**?
-
-- A. LLM10
-- B. LLM06
-- C. LLM02
-- D. LLM01
-
-**28.** [3.6] An LLM's response is rendered directly into a web page. To prevent stored/reflected XSS originating from model output, what should the application do?
-
-- A. Store model outputs in an encrypted database
-- B. Trust model output because it was generated internally
-- C. Encode and validate model output as untrusted before rendering
-- D. Authenticate users before showing model output
-
-**29.** [4.6] Employees are pasting confidential customer data into a personal, unsanctioned public chatbot to draft emails. Which problem does this BEST represent, and what should address it?
-
-- A. Model inversion, addressed by differential privacy
-- B. Shadow AI, addressed by an AI acceptable-use policy and DLP for generative AI
-- C. Membership inference, addressed by rate limiting
-- D. Sponge attacks, addressed by autoscaling
-
-**30.** [5.1] Over several weeks, a fraud-detection model's accuracy quietly declines as transaction patterns change. Which monitoring practice is designed to catch this?
-
-- A. Drift and performance monitoring
-- B. TLS handshake monitoring
-- C. Disk fragmentation analysis
-- D. Source-code license scanning
-
-**31.** [1.2] An architecture team wants a single chokepoint to enforce authentication, rate limiting, content filtering, and logging across all LLM traffic. Which component provides this?
-
-- A. Feature store
+**5.** [3.1] A SOC wants its LLM assistant to query and act on live security tooling — ticketing, EDR, and threat-intel platforms — through a single standardized interface so the model can call those systems as tools. Which technology provides this standardized tool-access layer?
+- A. Model Context Protocol (MCP) server
 - B. Vector database
-- C. AI gateway
-- D. Model registry
+- C. Generative adversarial network
+- D. Reverse proxy
 
-**32.** [2.1] An attacker contributes mislabeled samples to a crowd-sourced dataset so that the resulting model systematically misclassifies a target category. Which attack is this?
+**6.** [4.1] An enterprise creates a centralized, cross-functional body that sets AI standards, shares best practices, evaluates tooling, and guides responsible AI adoption across all business units. Which organizational structure is this?
+- A. Security operations center (SOC)
+- B. AI Center of Excellence
+- C. Change advisory board
+- D. Data loss prevention team
 
-- A. Data poisoning
-- B. Evasion
-- C. Model inversion
+**7.** [2.3] An AI agent must call an internal customer database tool, but only to read records belonging to the user who initiated the request. Which access-control approach BEST enforces this at the tool-call boundary?
+- A. Give the agent a shared administrator service account for simplicity
+- B. Rely on the system prompt to instruct the agent not to exceed its scope
+- C. Encrypt the database connection in transit only
+- D. Enforce least-privilege, per-user scoped credentials on the agent's tool calls
+
+**8.** [1.2] A team must document the original source, ownership, and chain of custody of every dataset used to train a model, so it can prove the data was lawfully obtained. Which data-security concept does this describe?
+- A. Data augmentation
+- B. Data balancing
+- C. Data provenance
+- D. Data masking
+
+**9.** [2.4] A bank wants to run model inference over customer records while keeping the data encrypted even while it is being processed, so plaintext never appears in host memory. Which encryption approach BEST satisfies this in-use requirement?
+- A. Confidential computing using a trusted execution environment (encryption in use)
+- B. TLS 1.3 for data in transit
+- C. AES-256 full-disk encryption for data at rest
+- D. SHA-256 hashing of the records
+
+**10.** [3.2] An attacker harvests a CFO's voice from public earnings calls, synthesizes a convincing clone, and phones the finance team to authorize an urgent wire transfer. Which AI-enabled attack technique is this?
+- A. SQL injection
+- B. Deepfake voice impersonation
+- C. Membership inference
+- D. Model theft
+
+**11.** [4.2] Employees routinely paste proprietary source code into an unsanctioned public chatbot to debug it, with no IT approval or oversight. Which risk does this behavior MOST directly represent?
+- A. Model inversion
+- B. Data poisoning
+- C. Differential privacy loss
+- D. Shadow AI
+
+**12.** [2.5] Finance reports that the monthly LLM API bill tripled with no increase in legitimate users, and security suspects abuse. Which monitoring capability MOST directly surfaces the token-consumption anomalies driving the cost spike?
+- A. Hallucination auditing
+- B. Bias and fairness auditing
+- C. AI cost and token-usage monitoring
+- D. Log sanitization
+
+**13.** [2.6] A deployed classifier's accuracy silently degrades on one specific output class after an attacker contributed many mislabeled samples to the public dataset the team uses for periodic retraining. Which attack does this evidence BEST indicate?
+- A. Model inversion
+- B. Data poisoning
+- C. Prompt injection
 - D. Membership inference
 
-**33.** [3.7] Before releasing a customer-facing chatbot, a team wants structured adversarial testing that probes for jailbreaks, harmful outputs, and policy bypasses. Which activity is this?
+**14.** [1.1] To improve classification quality, a prompt provides the model with three labeled input→label examples before presenting the new input it should classify. Which prompt-engineering technique is being used?
+- A. Multi-shot prompting
+- B. Zero-shot prompting
+- C. System-role assignment
+- D. Chain-of-custody prompting
 
-- A. Unit testing of UI components
-- B. Load testing of the inference endpoint
-- C. Spell-checking the system prompt
-- D. AI red teaming with adversarial/jailbreak test suites
+**15.** [3.3] A DevSecOps team wants AI to automatically inspect every pull request for known-vulnerable third-party dependencies before the code can be merged. Which CI/CD capability does this describe?
+- A. Unit testing
+- B. Regression testing
+- C. Code linting
+- D. Software composition analysis (SCA)
 
-**34.** [4.1] Which international standard specifies requirements for an AI management system (AIMS) that an organization can be certified against?
+**16.** [4.3] Which set correctly lists the four core functions of the NIST AI Risk Management Framework (AI RMF)?
+- A. Govern, Map, Measure, Manage
+- B. Identify, Protect, Detect, Respond
+- C. Plan, Do, Check, Act
+- D. Categorize, Select, Implement, Assess
 
-- A. ISO/IEC 27001
-- B. NIST SP 800-53
-- C. ISO/IEC 42001
-- D. SOC 2 Type II
+**17.** [2.1] An LLM application concatenates retrieved web content directly into its prompt, and an attacker's planted text overrides the system instructions to exfiltrate data. Using the OWASP Top 10 for LLM Applications (2025), which category BEST classifies this?
+- A. LLM02:2025 Sensitive Information Disclosure
+- B. LLM01:2025 Prompt Injection
+- C. LLM04:2025 Data and Model Poisoning
+- D. LLM06:2025 Excessive Agency
 
-**35.** [5.2] A defender seeds a fake but realistic credential into an internal knowledge base. If that exact secret ever appears in an LLM's output or in egress traffic, it signals data exfiltration. What is this control?
+**18.** [2.2] To prevent a single API consumer from causing a model denial-of-service through floods of large, expensive requests, which gateway control is MOST appropriate?
+- A. Output-schema validation
+- B. Training-data anonymization
+- C. Model watermarking
+- D. Per-key rate limits and token quotas
 
-- A. Differential privacy noise injection
-- B. Role-based access control
-- C. Network address translation
-- D. Canary tokens / honeytokens
+**19.** [1.2] A media company wants to embed an imperceptible but detectable marker into AI-generated images so it can later prove the content was machine-produced. Which technique is this?
+- A. Data masking
+- B. Tokenization
+- C. Watermarking
+- D. Quantization
 
-**36.** [1.3] Which statement BEST captures the "dual-use" concern of generative AI from a security standpoint?
+**20.** [3.1] A security team deploys an unsupervised model that baselines normal user login behavior and flags statistically rare deviations, with no predefined signatures. Which AI use case does this represent?
+- A. Signature matching
+- B. Code linting
+- C. Anomaly detection
+- D. Translation
 
-- A. The model can only be used by authorized administrators
-- B. The same capability can serve benign purposes or be repurposed for malicious ones
-- C. The model can be deployed either on-premises or in the cloud
-- D. The model can be fine-tuned by more than one team
+**21.** [2.3] An organization exposes an internal LLM only to authenticated services, each issued short-lived tokens from its identity provider with narrowly scoped permissions. Which access-control principle is PRIMARILY being applied?
+- A. Least-privilege, scoped API access via short-lived tokens
+- B. Perimeter defense in depth
+- C. Data minimization
+- D. Physically air-gapping the model
 
-**37.** [2.2] A user wraps a restricted request inside an elaborate fictional roleplay ("You are an actor playing a hacker...") to coax the model into ignoring its safety policies. Which attack is this MOST precisely?
+**22.** [4.1] Which AI-related role is PRIMARILY responsible for operationalizing, deploying, monitoring, and maintaining machine-learning models in production pipelines, including versioning, retraining, and rollback?
+- A. AI auditor
+- B. Data scientist
+- C. MLOps engineer
+- D. AI risk analyst
 
-- A. Jailbreak
-- B. Indirect prompt injection
-- C. Data poisoning
-- D. Model extraction
+**23.** [2.4] Before fine-tuning on customer support transcripts, a team automatically detects and replaces SSNs and card numbers with placeholder tokens so that sensitive identifiers never enter the training set. Which data-security control is this?
+- A. Data augmentation
+- B. PII redaction (data masking) of training data
+- C. Differential-privacy budgeting
+- D. Encryption at rest
 
-**38.** [3.1] A research team must train on sensitive records while provably limiting how much any single individual's data influences the model. Which technique BEST provides this guarantee?
+**24.** [1.3] In the AI lifecycle, which stage tests a trained model against a held-out dataset to measure accuracy, bias, and generalization before it is released to production?
+- A. Model evaluation
+- B. Data preparation
+- C. Feedback and iteration
+- D. Business use-case definition
 
-- A. Hashing personal identifiers before training
-- B. Encrypting the training dataset at rest
-- C. Differential privacy with calibrated noise
-- D. Gradient clipping for stability only
+**25.** [2.5] A security team is concerned that the prompt/response logs they capture could themselves become a data-leak vector if they store customer secrets in plaintext. Which logging control BEST addresses this?
+- A. Increase log retention
+- B. Rate monitoring
+- C. Response-confidence scoring
+- D. Log sanitization that redacts sensitive data before storage
 
-**39.** [4.2] An organization wants to evaluate, before launch, how a new AI hiring tool could affect individuals' rights and opportunities. Which assessment is MOST appropriate?
+**26.** [3.2] An attacker uses an LLM to rapidly fuse breach dumps, social-media activity, and DNS records into detailed target dossiers at scale, accelerating the planning phase of an intrusion. Which AI-enhanced attack capability is this?
+- A. Output-integrity attack
+- B. AI-driven automated reconnaissance and data correlation
+- C. Model skewing
+- D. Transfer-learning attack
 
-- A. A penetration test of the web front end
-- B. A disaster-recovery tabletop exercise
-- C. A static code review of the training scripts
-- D. An AI impact assessment
+**27.** [2.6] An LLM agent with broad plugin permissions deletes production records because a crafted input convinced it the destructive action was authorized. Which combination of compensating controls BEST reduces the blast radius of such excessive-agency incidents?
+- A. Increase the model's context-window size
+- B. Add more few-shot examples to the system prompt
+- C. Apply least privilege to tools and require human approval for destructive actions
+- D. Encrypt the agent's logs at rest
 
-**40.** [5.3] An autonomous trading agent begins executing harmful actions in real time. Which response capability is designed to stop it immediately?
+**28.** [4.2] A research team wants to publish aggregate statistics derived from a model while mathematically bounding how much any single individual's record can influence the released output. Which responsible-AI technique provides this guarantee?
+- A. Differential privacy
+- B. Explainability
+- C. Federated learning
+- D. Watermarking
 
-- A. Activating a kill switch to halt the agent
-- B. Filing a change request for the next sprint
-- C. Sending an alert email to the security team
-- D. Rotating the TLS certificate
+**29.** [1.1] A company needs a model that runs entirely on-device for a privacy-sensitive mobile app with limited compute, accepting narrower capability in exchange for lower latency and a smaller footprint. Which model type BEST fits?
+- A. A frontier large language model (LLM) served via cloud API
+- B. A small language model (SLM) deployed on-device
+- C. A generative adversarial network (GAN)
+- D. A federated ensemble of large language models
 
-**41.** [1.4] Which framework was published by Google to guide organizations in building security into AI systems by design?
+**30.** [2.1] An organization wants to track and reference standardized, publicly disclosed identifiers for vulnerabilities found in AI/ML software components and frameworks. Which resource is MOST relevant?
+- A. MIT AI Risk Repository
+- B. OWASP Machine Learning Security Top 10
+- C. CVE AI Working Group
+- D. MITRE ATLAS
 
-- A. MITRE ATLAS
-- B. NIST AI RMF
-- C. Google Secure AI Framework (SAIF)
-- D. ISO/IEC 42001
+**31.** [3.3] A small SOC with few developers wants to automate phishing-triage playbooks by visually chaining together pre-built actions without writing code. Which approach BEST fits this constraint?
+- A. A low-code/no-code automation (SOAR) platform
+- B. Rewriting the SIEM in assembly
+- C. Manual ticket triage only
+- D. Training a custom GAN
 
-**42.** [2.3] An attacker uploads a model to a public hub under a name nearly identical to a widely used model, hoping developers fetch the wrong one. Which supply-chain attack is this?
+**32.** [2.2] Before launching a customer-facing assistant, a team systematically probes its content-safety guardrails with adversarial jailbreak prompts to confirm the guardrails hold under attack. Which activity is this?
+- A. Network penetration testing
+- B. Guardrail testing and validation
+- C. Load testing
+- D. Data balancing
 
-- A. Membership inference
-- B. Model inversion
-- C. Insecure output handling
-- D. Typosquatting of the model/package
+**33.** [4.3] A multinational must ensure that training data from EU customers is stored and processed only within the EU to comply with local law. Which compliance concept governs this requirement?
+- A. Differential privacy
+- B. Third-party attestation
+- C. Data minimization
+- D. Data sovereignty
 
-**43.** [3.2] To ensure a model artifact has not been altered between training and deployment and originates from a trusted source, a team should implement which control?
+**34.** [2.3] An LLM service must be able to reach its internal vector database but must never be able to open outbound connections to the public internet, even if compromised. Which control BEST enforces this?
+- A. Token rate limiting
+- B. Model guardrails
+- C. Network egress filtering/segmentation isolating the model from the internet
+- D. Output-schema validation
 
-- A. Storing the weights in a private cloud bucket
-- B. Cryptographic model signing and signature verification before load
-- C. Scanning the weights file with antivirus
-- D. Renaming the file to include its training date and version
+**35.** [1.2] A pipeline ingests a mix of free-text customer emails, JSON application logs, and relational database tables. Which data type BEST describes the free-text emails specifically?
+- A. Unstructured data
+- B. Structured data
+- C. Semi-structured data
+- D. Tokenized data
 
-**44.** [4.3] Under the EU AI Act, government social-scoring systems that rank citizens' trustworthiness are MOST likely placed in which tier?
+**36.** [2.4] To reduce breach impact, a team configures its AI pipeline to collect and retain only the specific data fields required for the model's task and nothing more. Which data-security principle is this?
+- A. Data augmentation
+- B. Data balancing
+- C. Data masking
+- D. Data minimization
 
+**37.** [3.1] A developer wants inline, AI-assisted detection of insecure code patterns — hardcoded secrets, unsanitized SQL concatenation — flagged as they type in their editor. Which AI tool form factor BEST delivers this?
+- A. A browser plug-in
+- B. An IDE plug-in
+- C. A standalone public chatbot website
+- D. An MCP server for ticketing
+
+**38.** [2.5] An AI medical-coding assistant should flag answers it is uncertain about for human review rather than presenting them as authoritative. Which monitoring signal BEST supports routing low-certainty outputs to a human?
+- A. Rate monitoring
+- B. AI cost monitoring
+- C. Log protection
+- D. Response confidence-level scoring
+
+**39.** [4.1] Before broadly adopting generative AI tools across the workforce, which governance action should an organization take FIRST?
+- A. Purchase the most powerful available GPUs
+- B. Fine-tune a custom in-house model
+- C. Deploy a SOAR platform
+- D. Establish AI policies and procedures defining acceptable use
+
+**40.** [2.6] An attacker repeatedly queries a deployed facial-recognition model and uses its outputs to reconstruct recognizable images of individuals whose data was in the training set. Which attack is this?
+- A. Model inversion
+- B. Membership inference
+- C. Model theft
+- D. Data poisoning
+
+**41.** [3.1] A red team uses an AI-driven tool to autonomously enumerate a target environment, chain discovered weaknesses, and propose viable exploit paths with minimal human input. Which AI use case does this BEST represent?
+- A. Code linting
+- B. Automated penetration testing
+- C. Translation
+- D. Summarization
+
+**42.** [2.1] A team is building a traditional (non-LLM) image-classification pipeline and wants a threat list specifically tailored to classical ML risks such as input manipulation, data poisoning, and model theft. Which resource is MOST appropriate?
+- A. OWASP Top 10 for LLM Applications
+- B. MITRE ATLAS
+- C. OWASP Machine Learning Security Top 10
+- D. EU AI Act
+
+**43.** [3.2] Attackers use an LLM to automatically rewrite malware source code on every build so that signatures never match, while preserving the malware's function. Which AI-enhanced capability does this describe?
+- A. Deepfake disinformation
+- B. Membership inference
+- C. AI-generated polymorphic malware (automated obfuscation)
+- D. Model inversion
+
+**44.** [2.2] An image-to-text API should reject any uploaded file larger than 5 MB and accept only PNG and JPEG formats, to limit abuse and resource exhaustion. Which gateway controls do these rules represent?
+- A. Output watermarking
+- B. Differential privacy
+- C. Model guardrail prompt templates
+- D. Input size quotas and modality (file-type) limits
+
+**45.** [4.2] A firm markets its AI assistant's outputs as authoritative legal advice; clients act on them without attorney review and suffer harm. Which AI risk is MOST directly illustrated?
+- A. Overreliance on AI outputs
+- B. Data sovereignty violation
+- C. Membership inference
+- D. Model denial of service
+
+**46.** [2.3] An AI procurement agent may draft purchase orders, but no order above $10,000 may be finalized without a person approving it. Which access-control pattern BEST implements this requirement?
+- A. Encrypt the purchase-order database
+- B. Require human approval (an authorization gate) before the agent executes high-value actions
+- C. Rate-limit the agent's prompts
+- D. Add few-shot examples of well-formed purchase orders
+
+**47.** [3.3] A security team wants AI to automatically enrich, categorize, and route incoming incident tickets and draft initial response steps, reducing analyst toil. Which automation use case is this?
+- A. Software composition analysis
+- B. Regression testing
+- C. Deepfake detection
+- D. AI-assisted incident-response ticket management
+
+**48.** [2.4] Before any dataset may enter an AI training pipeline, the organization tags it as Public, Internal, Confidential, or Restricted to drive downstream handling rules. Which data-security control is this?
+- A. Data classification labeling
+- B. Data augmentation
+- C. Watermarking
+- D. Quantization
+
+**49.** [1.1] An agent learns an optimal sequence of firewall-rule changes by receiving rewards when it blocks attacks and penalties when it blocks legitimate traffic, with no labeled training dataset provided. Which training paradigm is this?
+- A. Supervised learning
+- B. Unsupervised learning
+- C. Reinforcement learning
+- D. Federated learning
+
+**50.** [2.5] An audit finds that a hiring model recommends male candidates at a substantially higher rate than equally qualified female candidates. Which auditing activity is specifically designed to detect this problem?
+- A. Hallucination auditing
+- B. AI cost monitoring
+- C. Bias and fairness auditing
+- D. Rate monitoring
+
+**51.** [4.3] Under the EU AI Act, a government program that performs general "social scoring" of citizens is classified into which risk tier?
 - A. High risk
 - B. Prohibited (unacceptable risk)
 - C. Limited risk
 - D. Minimal risk
 
-**45.** [5.4] To protect an AI service against cost-bombing and unbounded consumption, which combination of controls is BEST?
-
-- A. Token/request quotas, rate limits, and budget/spend alerts
-- B. Disabling all logging to save money
-- C. Enforcing mutual TLS on the API endpoint
-- D. Removing authentication to reduce overhead
-
-**46.** [1.5] An organization self-hosts an open-weight model on its own infrastructure. Under the shared responsibility model, who is responsible for patching vulnerabilities in the model and its serving stack?
-
-- A. The original model provider
-- B. The end user submitting prompts
-- C. The deploying organization itself
-- D. The cloud marketplace listing the model
-
-**47.** [2.4] A user-facing agent accepts a URL and fetches it with a built-in HTTP tool. An attacker supplies a link to the cloud metadata endpoint, and the agent retrieves internal credentials. Which risk is this?
-
-- A. Membership inference
-- B. Adversarial example evasion
-- C. Differential privacy failure
-- D. Server-side request forgery (SSRF) / lateral movement via the agent's tool
-
-**48.** [3.3] A coding assistant generates and then executes code suggested by users. Which control BEST limits the blast radius of malicious generated code?
-
-- A. Running a syntax linter over the code before executing it
-- B. Executing generated code inside a sandboxed, isolated environment
-- C. Trusting the code because the model produced it
-- D. Logging the code but running it with admin rights
-
-**49.** [4.4] An audit finds a loan model approves applicants at significantly different rates across protected groups with no business justification. Which concept describes this, and how is it measured?
-
-- A. Hallucination, measured by perplexity
-- B. Disparate impact, measured with fairness metrics
-- C. Overfitting, measured by training loss only
-- D. Latency, measured in milliseconds
-
-**50.** [5.5] To let external security researchers responsibly report flaws discovered in a deployed model, an organization should establish which of the following?
-
-- A. An AI vulnerability disclosure program
-- B. A marketing bug-bounty press release only
-- C. A policy forbidding any external contact
-- D. A requirement that researchers sign over IP rights before reporting
-
-**51.** [2.5] A general-purpose LLM, when prompted in a certain way, reproduces long verbatim passages of copyrighted text and an API key that appeared in its training corpus. Which phenomenon is this?
-
-- A. Adversarial perturbation
-- B. Confused-deputy escalation
-- C. Sponge attack
-- D. Training-data memorization and regurgitation
-
-**52.** [3.4] An organization wants to strictly limit which external tools an AI agent is permitted to invoke. Which control implements this?
-
-- A. Maintaining a tool allow-list that scopes the permitted functions
-- B. Encrypting the agent's conversation history
-- C. Giving the agent a wildcard permission to all tools
-- D. Logging tool calls but enforcing no restrictions
-
-**53.** [4.5] Why is third-party assessment especially important when adopting a *closed, proprietary* foundation model rather than an open one?
-
-- A. Closed models always run faster and need no review
-- B. Closed models never process sensitive data
-- C. Limited visibility into the weights and training data increases reliance on vendor-provided controls and attestations
-- D. Closed models are exempt from all regulation
-
-**54.** [5.1] An AI assistant's prompt logs frequently contain customer PII. Which logging approach BEST balances observability with privacy obligations?
-
-- A. Storing all prompts and responses in plaintext indefinitely
-- B. Privacy-aware logging with PII redaction and data minimization
-- C. Disabling all logging entirely
-- D. Logging only to local developer laptops
-
-**55.** [1.1] Which statement BEST describes what an *embedding* is in modern AI systems?
-
-- A. A compression algorithm that losslessly shrinks model weights
-- B. The system prompt prepended to every user request
-- C. A cache of recent prompts and their responses
-- D. A dense numeric vector representing the semantic meaning of text
-
-**56.** [2.6] In the OWASP Top 10 for LLM Applications (2025), which identifier corresponds to **Unbounded Consumption**?
-
-- A. LLM10
-- B. LLM01
-- C. LLM05
-- D. LLM07
-
-**57.** [3.5] A document retrieved by a RAG pipeline contains hidden instructions that, once placed in the prompt, hijack the model's behavior. Which defense MOST directly addresses this?
-
-- A. Encrypting the vector database at rest
-- B. Requiring user authentication before retrieval
-- C. Sanitizing/scanning retrieved content and treating it as untrusted (indirect-injection defense)
-- D. Logging the retrieved passages for later audit
-
-**58.** [4.6] A company wants to stop employees from pasting regulated data into generative AI tools and to enforce that programmatically. Which control is MOST appropriate?
-
-- A. A quarterly awareness email with no technical enforcement
-- B. Rotating employee credentials more frequently
-- C. Deploying DLP controls tuned for generative-AI usage
-- D. Requiring VPN connections for all chatbot access
-
-**59.** [5.2] A detection-engineering team wants its AI-specific alerts to align with a shared taxonomy of adversary techniques for AI systems. Which approach BEST supports this?
-
-- A. Mapping detections to CPU performance counters
-- B. Building detections mapped to MITRE ATLAS techniques
-- C. Relying solely on antivirus signatures
-- D. Alerting only on failed TLS handshakes
-
-**60.** [2.1] An attacker with only API access sends a large, carefully chosen set of queries and uses the responses to train a near-equivalent local copy of a proprietary model. Which attack is this?
-
-- A. Membership inference
-- B. Data poisoning
-- C. Evasion
-- D. Model extraction/stealing
-
-**61.** [3.6] An AI agent can initiate wire transfers. Which guardrail BEST reduces the risk of an erroneous or manipulated high-impact action?
-
-- A. Allowing the agent to act fully autonomously to maximize speed
-- B. Requiring human-in-the-loop approval before executing high-impact actions
-- C. Letting the agent batch multiple transfers into one call
-- D. Removing logging to reduce friction
-
-**62.** [4.1] Which NIST AI RMF function is centered on analyzing, assessing, and tracking AI risks using metrics and test results?
-
-- A. Govern
-- B. Map
-- C. Measure
-- D. Manage
-
-**63.** [5.3] A newly deployed model version turns out to have been poisoned and is producing attacker-favored outputs. Which response provides the FASTEST safe recovery?
-
-- A. Lowering the API request quota for all users
-- B. Restarting the inference servers
-- C. Clearing the response cache
-- D. Rolling back to the last known-good model version
-
-**64.** [1.2] Which statement BEST distinguishes training from inference?
-
-- A. Training learns model parameters from data; inference applies the trained model to new inputs
-- B. Training serves predictions to users; inference adjusts the model's weights
-- C. Training and inference are identical processes with different names
-- D. Inference requires labeled data while training never does
-
-**65.** [2.2] By repeatedly asking a chatbot to "repeat the text above" and "show your initial instructions," an attacker recovers the confidential system prompt. Which attack is this?
-
-- A. System-prompt leakage
-- B. Data poisoning
+**52.** [2.6] A competitor systematically queries a paid prediction API with many crafted inputs and uses the input/output pairs to train a functionally equivalent clone, avoiding licensing fees. Which attack is this?
+- A. Model theft (model extraction)
+- B. Membership inference
 - C. Model inversion
-- D. Sponge attack
+- D. Prompt injection
 
-**66.** [3.7] A team wants every code change to a safety-critical model to automatically run a battery of safety and jailbreak-resistance tests before merge. Which practice is this?
+**53.** [3.1] A SOC lead wants AI to condense a 40-page threat-intelligence report into a one-page executive brief. Which AI use case is this?
+- A. Signature matching
+- B. Summarization
+- C. Fraud detection
+- D. Penetration testing
 
-- A. Manual annual penetration testing only
-- B. Disabling tests to keep the pipeline fast
-- C. Integrating automated safety evals into CI/CD
-- D. Reviewing logs after incidents only
+**54.** [3.2] A coordinated campaign uses generative AI to mass-produce convincing but fabricated news articles intended to manipulate public opinion ahead of an election. Which AI-enabled threat is this?
+- A. Spear-phishing payload generation
+- B. Adversarial-example evasion
+- C. AI-generated disinformation campaign
+- D. Automated vulnerability scanning
 
-**67.** [4.2] Where should an organization track each identified AI risk along with its owner, likelihood, impact, and treatment status?
+**55.** [1.3] After deployment, a fraud-detection model's precision steadily declines as customer spending patterns shift over time. Which AI lifecycle activity is designed to catch this drift and trigger retraining?
+- A. Monitoring and maintenance (drift detection)
+- B. Business use-case definition
+- C. Data collection
+- D. Model selection
 
-- A. The model card
-- B. A risk register
-- C. The SBOM
-- D. The end-user license agreement
-
-**68.** [5.4] To recover an AI service after a destructive incident, which set of assets is MOST important to back up?
-
-- A. Model weights, vector indexes, and configuration
-- B. Only the marketing website
-- C. Only the GPU driver version numbers
-- D. Only the office network diagram
-
-**69.** [2.3] A security team wants a complete inventory of a model's components, datasets, and dependencies to assess supply-chain exposure. Which artifact provides this?
-
-- A. A model card describing intended use
-- B. An MLBOM/SBOM for the model and its dependencies
-- C. A privacy policy for end users
-- D. A rate-limiting configuration file
-
-**70.** [3.1] A model will be trained partly on untrusted, crowd-sourced contributions. Which control BEST reduces the risk of poisoning before training begins?
-
-- A. Encrypting the training pipeline's network traffic
-- B. Encrypting the final model at rest only
-- C. Validating, sanitizing, and vetting data sources and contributors
-- D. Placing the trained model behind an API gateway
-
-**71.** [4.3] A customer subject to a *solely automated* loan decision wants meaningful human review of that decision. Which regulation MOST directly grants rights around solely automated decision-making?
-
-- A. PCI DSS
-- B. The EU AI Act's minimal-risk tier
-- C. HIPAA Security Rule
-- D. GDPR Article 22
-
-**72.** [5.5] To keep defenses current against newly published attacks like novel jailbreak chains and poisoning techniques, a security team should MOST directly invest in which capability?
-
-- A. Reducing the number of monitored log sources
-- B. Disabling automatic updates to avoid breakage
-- C. Reducing the logging retention period
-- D. Consuming AI-specific threat intelligence feeds
-
-**73.** [1.3] Which statement BEST describes how AI shifts the threat model in terms of impact?
-
-- A. AI removes the need for monitoring because models self-heal
-- B. AI increases the speed and scale at which attacks can be produced and executed
-- C. AI guarantees that all outputs are safe by default
-- D. AI eliminates supply-chain risk entirely
-
-**74.** [2.4] In a multi-agent system, one agent writes deceptive content into a shared memory store that a second agent later reads and acts upon, corrupting its behavior. Which risk is this?
-
-- A. Differential privacy leakage
-- B. Adversarial example evasion
-- C. Memory/conversation poisoning between agents
-- D. Unsafe pickle deserialization
-
-**75.** [3.3] An organization wants to isolate its GPU inference servers so a compromise there cannot reach core enterprise systems. Which control BEST accomplishes this?
-
-- A. Enabling verbose request logging on the servers
-- B. Storing weights in safetensors format
-- C. Rotating the servers' TLS certificates regularly
-- D. Network segmentation for the AI serving infrastructure
-
-**76.** [4.4] Which trustworthy-AI property gives an individual the ability to challenge and seek redress for a decision an AI system made about them?
-
-- A. Latency
-- B. Contestability
-- C. Throughput
-- D. Determinism
-
-**77.** [5.1] A sudden, sustained spike in token consumption and spend on an LLM API, outside normal patterns, is MOST likely surfaced by which monitoring capability?
-
-- A. Cost/usage monitoring that flags anomalous consumption
-- B. Endpoint antivirus scan reports
-- C. TLS certificate expiry alerts
-- D. License-compliance scanning
-
-**78.** [2.5] An attacker uses a face-recognition model's confidence outputs to reconstruct recognizable images of individuals in its training set. Which attack is this?
-
+**56.** [3.2] An attacker feeds a target's LinkedIn history and prior emails to an LLM to auto-generate highly personalized phishing messages at scale. Which AI-enhanced attack vector is this?
 - A. Model inversion
-- B. Membership inference
-- C. Evasion
-- D. Typosquatting
-
-**79.** [3.4] A code review finds long-lived API keys hardcoded directly in an agent's source. Which remediation is BEST?
-
-- A. Commenting out the keys but leaving them in the file
-- B. Encoding the keys in base64 within the source
-- C. Storing credentials in a secrets manager and rotating them, removing them from code
-- D. Moving the keys into the system prompt instead
-
-**80.** [2.5] A team discovers that, given a stored embedding vector, an attacker can approximately reconstruct the original sensitive text it was derived from. Which attack does this describe?
-
-- A. Embedding inversion
 - B. Data poisoning
-- C. Jailbreak
-- D. Sponge attack
+- C. Membership inference
+- D. AI-generated spear-phishing (social engineering at scale)
 
-**81.** [2.2] An LLM's raw output is passed directly into a downstream shell command without validation, allowing injected commands to execute. Which OWASP LLM risk does this BEST represent?
+**57.** [4.1] Which AI-related role PRIMARILY focuses on assessing, quantifying, and tracking AI-specific risks — such as bias, drift, and compliance gaps — and reporting them to leadership?
+- A. Data engineer
+- B. AI risk analyst
+- C. Platform engineer
+- D. Machine-learning engineer
 
-- A. Unbounded consumption
-- B. Improper/insecure output handling
-- C. Model theft
-- D. Excessive agency only
+**58.** [4.2] A customer-facing chatbot was fine-tuned on raw support logs and now occasionally emits another customer's personal details in its responses. Which AI risk does this MOST directly represent?
+- A. Model denial of service
+- B. Excessive agency
+- C. Data sovereignty violation
+- D. Accidental data leakage
 
-**82.** [2.6] In the OWASP Top 10 for LLM Applications (2025), which identifier corresponds to **Sensitive Information Disclosure**?
+**59.** [3.3] A CI/CD pipeline uses AI to evaluate each deployment's risk and automatically reverts the release when post-deploy error rates spike beyond a threshold. Which automation capability is this?
+- A. Software composition analysis
+- B. Data anonymization
+- C. Automated deployment with AI-driven rollback
+- D. Penetration testing
 
-- A. LLM01
-- B. LLM06
-- C. LLM02
-- D. LLM09
+**60.** [4.3] An organization wants to formally certify its AI management system against an international standard created specifically for governing AI. Which standard is MOST appropriate?
+- A. ISO/IEC 27001
+- B. NIST AI RMF
+- C. OECD AI Principles
+- D. ISO/IEC 42001
 
-**83.** [3.5] An audit finds the vector database backing a RAG system is reachable on the network with no authentication. Which control should be applied FIRST?
+---
 
-- A. Apply authentication and access control to the vector database
-- B. Encrypt the embeddings stored in the database
-- C. Reduce the number of indexed documents
-- D. Log all queries sent to the database
-
-**84.** [3.6] To make prompt injection harder, an application should structure prompts so that trusted instructions are clearly separated from untrusted user/retrieved data. Which technique is this?
-
-- A. Shortening every user message to a fixed length
-- B. Concatenating user input directly into the instruction string
-- C. Disabling output logging
-- D. Prompt templating that separates trusted instructions from untrusted input
-
-**85.** [5.3] A company confirms its support chatbot exposed customer PII in responses. After containing the issue, what is the MOST appropriate next action?
-
-- A. Delete all logs to reduce liability
-- B. Quietly redeploy and take no further action
-- C. Raise the model's safety-filter threshold
-- D. Assess the scope of exposed data and trigger breach-notification procedures
-
-**86.** [2.1] A model behaves normally on ordinary inputs but produces an attacker-chosen output whenever a specific hidden trigger pattern is present. Which attack is this?
-
-- A. Evasion via gradient noise
-- B. Membership inference
-- C. Backdoor/trojan model
-- D. Model extraction
-
-**87.** [3.6] Before returning chatbot responses to users, an organization wants to automatically strip out Social Security numbers and similar identifiers. Which guardrail accomplishes this?
-
-- A. Encrypting the response payload in transit
-- B. Authenticating the user before responding
-- C. Disabling the content filter
-- D. Applying PII redaction to model outputs
-
-**88.** [1.4] Which resource is specifically designed to enumerate the most critical security risks for applications built on large language models?
-
-- A. The OWASP ML Security Top 10
-- B. The OWASP Top 10 for LLM Applications (2025)
-- C. The NIST AI Risk Management Framework
-- D. MITRE ATT&CK for Enterprise
-
-**89.** [5.4] An attacker sends specially crafted, computationally expensive inputs designed to exhaust GPU resources and deny service. Which mitigation BEST improves resilience?
-
-- A. Removing all input validation to speed processing
-- B. Enforcing input size/complexity limits plus rate limiting and autoscaling caps
-- C. Routing all traffic through a single inference node
-- D. Disabling monitoring during peak load
-
-**90.** [2.2] Users routinely accept a legal-research assistant's citations without verification and have filed briefs containing cases the model fabricated. Which risk does this BEST illustrate?
-
-- A. Overreliance on AI-generated content
-- B. Data poisoning of the training set
-- C. Unsafe deserialization
-- D. Membership inference
+*End of Practice Test 2. Score yourself with [`practice-test-2-answers.md`](practice-test-2-answers.md).*

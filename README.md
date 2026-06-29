@@ -1,10 +1,9 @@
-# CompTIA SecAI+ — Study Guide, Practice Tests & Flashcards
+# CompTIA SecAI+ (CY0-001) — Study Guide, Practice Tests & Flashcards
 
-A free, **one-stop study resource** for the **CompTIA SecAI+** (AI security) certification: a full domain-by-domain study guide, **3 × 90-question practice exams** with answer keys and explanations, **220+ Anki flashcards**, quick-reference cheat sheets, and a 4-week study plan — all mapped to a single community exam blueprint.
+A free, **one-stop study resource** for the **CompTIA SecAI+** certification (**Exam CY0-001 V1**): a full domain-by-domain study guide, **3 × 60-question practice exams** with answer keys and explanations, **210+ Anki flashcards**, quick-reference cheat sheets, and a study plan — all structured to CompTIA's **official exam objectives**.
 
-> ## ⚠️ Unofficial — read this first
-> This is a **community-maintained study aid**. It is **NOT affiliated with, endorsed by, or sourced from CompTIA**, and it does **not** reproduce official exam content. The domains, weightings, question count, time, and passing score here are **community estimates** built from CompTIA's announced positioning of SecAI+ and the established AI-security body of knowledge (OWASP, NIST, MITRE, ISO).
-> **Download the official exam objectives from CompTIA and reconcile any differences — where they differ, the official document wins.** See [`exam-objectives.md`](exam-objectives.md).
+> ## ⚠️ Read this first
+> This is a **free, community-made study aid**. It is **NOT affiliated with, authorized by, or endorsed by CompTIA**, and it contains **no official or actual exam questions** — every practice question here is original. The repo is **structured to the official CompTIA SecAI+ CY0-001 V1 objectives** (Objectives Document v4.0, © 2025 CompTIA), reproduced/paraphrased for study alignment. CompTIA periodically updates its exams — **always verify against the current objectives at CompTIA's site.** CompTIA®, SecAI+®, and Security+® are trademarks of CompTIA, Inc. See [`exam-objectives.md`](exam-objectives.md).
 
 ---
 
@@ -12,52 +11,62 @@ A free, **one-stop study resource** for the **CompTIA SecAI+** (AI security) cer
 
 | Resource | What it is |
 |---|---|
-| 📘 [`exam-objectives.md`](exam-objectives.md) | The community **blueprint** — 5 domains, weightings, exam format — that everything else derives from |
-| 📚 [`study-guide/`](study-guide/) | One chapter per domain (1.0–5.0) + [frameworks crosswalk](study-guide/frameworks-crosswalk.md), [glossary](study-guide/glossary.md) (~135 terms), [acronyms](study-guide/acronyms.md) |
-| 📝 [`practice-tests/`](practice-tests/) | **3 variants × 90 questions**, CompTIA-style, each with a separate answer key + per-question explanations, every question tagged to an objective |
-| 🗂️ [`flashcards/`](flashcards/) | **222** Anki-importable cards (TSV), tagged by domain |
+| 📘 [`exam-objectives.md`](exam-objectives.md) | The **official blueprint** — 4 domains, weightings, exam format — that everything else is built on |
+| 📚 [`study-guide/`](study-guide/) | One chapter per official domain (1.0–4.0) + [frameworks crosswalk](study-guide/frameworks-crosswalk.md), [glossary](study-guide/glossary.md) (~160 terms), [acronyms](study-guide/acronyms.md) (the official SecAI+ list) |
+| 📝 [`practice-tests/`](practice-tests/) | **3 variants × 60 questions** (real exam length), each with a separate answer key + per-question explanations, every question tagged to an objective |
+| 🗂️ [`flashcards/`](flashcards/) | **213** Anki-importable cards (TSV), tagged by domain, weighted to the exam |
 | ⚡ [`cheatsheets/`](cheatsheets/) | One-page [attacks](cheatsheets/attacks-quick-reference.md) and [frameworks](cheatsheets/frameworks-quick-reference.md) quick references |
-| 🗓️ [`study-plan/`](study-plan/) | A [4-week plan](study-plan/4-week-plan.md) tying it all together |
+| 🗓️ [`study-plan/`](study-plan/) | A [study plan](study-plan/4-week-plan.md) tying it all together |
 
-## Exam blueprint at a glance (community estimate — verify with CompTIA)
+## Exam at a glance (official CY0-001 V1)
 
-| # | Domain | Weight |
-|---|--------|:------:|
-| 1.0 | AI & Security Foundations | 16% |
-| 2.0 | AI Threats, Attacks & Vulnerabilities | 24% |
-| 3.0 | Securing the AI/ML Lifecycle | 22% |
-| 4.0 | AI Governance, Risk & Compliance | 18% |
-| 5.0 | AI Security Operations & Incident Response | 20% |
+| Attribute | Value |
+|---|---|
+| Exam number | **CY0-001 V1** |
+| Questions | **Maximum of 60** |
+| Question types | **Multiple-choice and performance-based** |
+| Length | **60 minutes** |
+| Passing score | **600** (scale 100–900) |
+| Recommended experience | 3–4 yrs IT + ~2 yrs hands-on cybersecurity |
 
-**Format mirrored by the practice tests:** 90 questions · 165 minutes · single best answer · community pass guide ≈ **750/900 (~83% correct)**.
+## Domains & weightings (official)
+
+| # | Domain | Weight | Study chapter |
+|---|--------|:------:|---|
+| 1.0 | Basic AI Concepts Related to Cybersecurity | 17% | [domain 1](study-guide/domain-1-ai-concepts.md) |
+| 2.0 | **Securing AI Systems** | **40%** | [domain 2](study-guide/domain-2-securing-ai-systems.md) |
+| 3.0 | AI-assisted Security | 24% | [domain 3](study-guide/domain-3-ai-assisted-security.md) |
+| 4.0 | AI Governance, Risk, and Compliance | 19% | [domain 4](study-guide/domain-4-governance-risk-compliance.md) |
+
+> 💡 **Domain 2 is 40% of the exam** — nearly half. Weight your study time toward securing AI systems (threat modeling, controls, monitoring, and attack/compensating-control analysis).
 
 ---
 
 ## How to use this repo
 
-1. **Orient** — read [`exam-objectives.md`](exam-objectives.md) so you know the 5 domains and what each tests.
-2. **Learn** — work through [`study-guide/`](study-guide/) domain by domain. Keep the [glossary](study-guide/glossary.md) and [frameworks crosswalk](study-guide/frameworks-crosswalk.md) open alongside.
+1. **Orient** — read [`exam-objectives.md`](exam-objectives.md) so you know the 4 domains and what each tests.
+2. **Learn** — work through [`study-guide/`](study-guide/) domain by domain (spend the most time on Domain 2). Keep the [glossary](study-guide/glossary.md) and [frameworks crosswalk](study-guide/frameworks-crosswalk.md) open alongside.
 3. **Drill** — load the [flashcards](flashcards/) into Anki and review daily (filter by domain tag for weak areas).
-4. **Test** — take [Practice Test 1](practice-tests/practice-test-1.md) closed-book and timed (165 min). Score it, then **read every explanation — including for questions you got right.**
-5. **Target** — each question is tagged (e.g., `[2.2]`); map your misses back to the study-guide objective and re-review.
-6. **Repeat** — Tests 2 and 3 are independent variants. Aim to consistently clear ~83% before exam day.
-7. **Cram** — the [cheat sheets](cheatsheets/) and the 4-week [study plan](study-plan/) are for the final stretch.
+4. **Test** — take [Practice Test 1](practice-tests/practice-test-1.md) closed-book and **timed (60 min, 60 questions)**. Score it, then **read every explanation — including for questions you got right.**
+5. **Target** — each question is tagged (e.g., `[2.6]`); map your misses back to the study-guide objective and re-review.
+6. **Repeat** — Tests 2 and 3 are independent variants. Build consistency before exam day.
+7. **Cram** — the [cheat sheets](cheatsheets/) and the [study plan](study-plan/4-week-plan.md) are for the final stretch.
 
-> 💡 The practice tests are **exam-realistic, not exam-identical**. Use them to find knowledge gaps — don't memorize answer letters (the same concepts appear at different positions across variants by design).
+> The practice tests are **exam-realistic, not exam-identical**. Use them to find gaps — don't memorize answer letters (the same concepts appear at different positions across variants by design).
 
 ---
 
-## Frameworks this guide draws on
+## Frameworks & resources this guide covers (per the official objectives)
 
-OWASP **Top 10 for LLM Applications (2025)** · OWASP **ML Security Top 10** · **NIST AI RMF** (Govern/Map/Measure/Manage) + **GenAI Profile (AI 600-1)** · **MITRE ATLAS** · **ISO/IEC 42001** (AI management system) · **EU AI Act** · **Google SAIF** · NIST **CSF 2.0 / SP 800-53**.
+OWASP **Top 10 for LLM Applications (2025)** & **ML Security Top 10** · **MIT AI Risk Repository** · **MITRE ATLAS** · **CVE AI Working Group** · threat-modeling frameworks · **NIST AI RMF (AIRMF)** · **EU AI Act** · **OECD AI Principles** · **ISO AI standards** (ISO/IEC 42001, 23894).
 
 ## Contributing & corrections
 
-This is community material and **may contain errors** — corrections are welcome. Open an issue or PR with a source for any fix. If you have the **official CompTIA SecAI+ objectives**, reconciling this blueprint against them is the most valuable contribution.
+Community material **may contain errors** — corrections welcome via issue or PR (with a source). The most valuable contributions are reconciling content against the current official objectives and fixing any inaccuracy.
 
 ## License
 
-Content is licensed **CC BY 4.0**; any scripts are **MIT**. See [`LICENSE`](LICENSE). CompTIA®, SecAI+, and Security+ are trademarks of CompTIA, Inc.; used here for identification and study purposes only.
+Content is **CC BY 4.0**; scripts are **MIT**. See [`LICENSE`](LICENSE). CompTIA®, SecAI+®, and Security+® are trademarks of CompTIA, Inc., used here for identification and study purposes only; this project is unofficial and not endorsed by CompTIA.
 
 ---
 

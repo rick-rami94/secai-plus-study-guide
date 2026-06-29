@@ -1,70 +1,69 @@
 # SecAI+ Flashcards (Unofficial / Community)
 
-> Community-built Anki deck for the **unofficial** "CompTIA SecAI+" AI-security study repo. Not affiliated with, endorsed by, or sourced from CompTIA. Aligned to the community blueprint in [`../exam-objectives.md`](../exam-objectives.md).
+> Unofficial study material aligned to CompTIA SecAI+ CY0-001 V1 objectives. See [../exam-objectives.md](../exam-objectives.md).
+
+Not affiliated with, authorized by, or endorsed by CompTIA. Contains no official or actual exam questions.
 
 ## What's in the deck
 
-`secai-plus-flashcards.tsv` contains **222 cards** spanning all five domains, weighted to mirror the community exam estimate:
+`secai-plus-flashcards.tsv` contains **213 cards** spanning the **four official domains**, weighted to mirror the official exam blueprint (Domain 2 dominates at 40%):
 
-| Domain | Topic | Cards |
-|---|---|:---:|
-| 1 | AI & Security Foundations | 36 |
-| 2 | AI Threats, Attacks & Vulnerabilities | 56 |
-| 3 | Securing the AI/ML Lifecycle | 50 |
-| 4 | AI Governance, Risk & Compliance | 40 |
-| 5 | AI Security Operations & Incident Response | 40 |
-| | **Total** | **222** |
+| Domain | Title | Weight | Cards |
+|---|---|:---:|:---:|
+| 1 | Basic AI Concepts Related to Cybersecurity | 17% | 35 |
+| 2 | Securing AI Systems | 40% | 84 |
+| 3 | AI-assisted Security | 24% | 50 |
+| 4 | AI Governance, Risk, and Compliance | 19% | 44 |
+| | **Total** | **100%** | **213** |
 
-The mix includes definition cards, attack-to-defense cards, "which-framework" cards, and compare/contrast cards covering the OWASP LLM Top 10 (2025), NIST AI RMF, MITRE ATLAS, ISO/IEC 42001, EU AI Act, GDPR, and more.
+The mix includes definition cards, attack-to-compensating-control cards, "which resource/framework" cards, and compare/contrast cards. Content tracks the official sub-bullets, covering items such as data lineage vs. provenance, epoch/pruning/quantization, federated learning, GANs, SLM vs. LLM, zero/one/multi-shot prompting, watermarking, RAG (embeddings and vector storage), the OWASP LLM Top 10 (2025) and ML Security Top 10, MIT AI Risk Repository, MITRE ATLAS, the CVE AI Working Group, gateway and model controls, access and data-security controls, monitoring/auditing, the full Domain 2 attack list with compensating controls, MCP servers and AI agents, deepfakes/misinformation/disinformation, CI/CD, the AI Center of Excellence and AI roles, responsible-AI principles, differential privacy, explainability, shadow AI, the EU AI Act, OECD, ISO/IEC 42001 and 23894, the NIST AI RMF (Govern/Map/Measure/Manage), and data sovereignty.
 
 ### File format
 
-Tab-separated, **3 columns, no header row**: `Front` (TAB) `Back` (TAB) `Tags`. Each card is one line. Line breaks inside a field (rare) use the HTML `<br>` tag.
+Tab-separated, **exactly 3 columns, no header row**: `Front` (TAB) `Back` (TAB) `Tags`. One card per line. Any rare in-field line break uses the HTML `<br>` tag (none are currently used).
 
 ### Tagging
 
-Every card carries `SecAIplus` plus its domain tag (`Domain1`–`Domain5`), and most add topic tags such as `OWASP`, `LLM01`, `PromptInjection`, `NISTAIRMF`, `EUAIAct`, `RAG`, `Agents`, or `Defense`. Example: `SecAIplus Domain2 PromptInjection OWASP LLM01`.
+Every card carries `SecAIplus`, its domain tag (`Domain1`–`Domain4`), and a topic tag. **Only Domain1–Domain4 are used** (the exam has four domains). Example: `SecAIplus Domain2 ModelInversion`.
 
 ## Import into Anki (desktop)
 
-1. Open **Anki desktop**.
-2. (Optional) Create or select a target deck first, e.g. "SecAI+".
-3. **File -> Import** and select `secai-plus-flashcards.tsv`.
-4. In the import dialog set:
-   - **Type / Note type:** Basic
+1. Open **Anki desktop**. (Optional) create/select a target deck first, e.g. "SecAI+".
+2. **File → Import** and select `secai-plus-flashcards.tsv`.
+3. In the import dialog set:
+   - **Note type / Type:** Basic
    - **Field separator:** Tab
-   - **Allow HTML in fields:** ON (so any `<br>` renders as a line break instead of literal text)
-5. **Map the fields:** Field 1 -> **Front**, Field 2 -> **Back**, Field 3 -> **Tags**.
-6. Click **Import**.
+   - **Allow HTML in fields:** ON
+4. **Map the fields:** Field 1 → **Front**, Field 2 → **Back**, Field 3 → **Tags**.
+5. Click **Import**.
 
-## Study by domain using tags
+## Study by tag
 
 After import, use Anki's Browser/search to drill into a domain or topic:
 
-- `tag:Domain2` — only Domain 2 (Threats & Attacks) cards
-- `tag:Domain3 tag:Defense` — Domain 3 defensive-control cards
-- `tag:OWASP` — every OWASP LLM Top 10 card
-- `deck:SecAI+ tag:Domain5` — Domain 5 within your chosen deck
+- `tag:Domain2` — only Domain 2 (Securing AI Systems) cards — the 40% domain, study these most
+- `tag:Domain2 tag:ModelInversion` — a specific topic within a domain
+- `tag:Defense` — compensating-control cards
+- `tag:OWASPLLM` — OWASP LLM Top 10 cards
+- `tag:NISTAIRMF` — NIST AI RMF cards
 
 You can also create Filtered Decks from any of these searches for focused cramming.
 
 ## Mobile / sync
 
-Sign in to **AnkiWeb** (free) in Anki desktop and click **Sync**. Your deck then syncs to **AnkiMobile** (iOS) or **AnkiDroid** (Android) so you can review cards on your phone.
-
-## Verify before relying on this
-
-This is **community-maintained study content**, not official CompTIA material, and may contain errors or drift from the real exam. Reconcile against the official CompTIA SecAI+ objectives and authoritative primary sources (OWASP, NIST, MITRE, ISO, the EU AI Act text) before exam day. Where they differ, the official sources win.
-
----
+Sign in to **AnkiWeb** (free) in Anki desktop and click **Sync**. Your deck then syncs to **AnkiMobile** (iOS) or **AnkiDroid** (Android).
 
 ## Optional: build a one-click `.apkg`
 
-The TSV imports directly, but if you prefer a single double-click deck file:
+The TSV imports directly, but if you prefer a single double-click deck file, the optional `build_apkg.py` script can package it:
 
 ```bash
 pip install genanki
 python build_apkg.py      # -> secai-plus.apkg
 ```
 
-Then in Anki: **File → Import → `secai-plus.apkg`** (or just double-click it). Re-running updates the same deck instead of duplicating.
+Then in Anki: **File → Import → `secai-plus.apkg`** (or double-click it). Re-running updates the same deck instead of duplicating.
+
+## Verify before relying on this
+
+This is **community-maintained study content**, not official CompTIA material, and may contain errors or drift from the real exam. Reconcile against the official CompTIA SecAI+ CY0-001 objectives and authoritative primary sources (OWASP, NIST, MITRE, ISO, the EU AI Act text) before exam day. Where they differ, the official sources win.

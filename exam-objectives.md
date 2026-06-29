@@ -1,93 +1,144 @@
-# CompTIA SecAI+ — Community Exam Blueprint (Unofficial)
+# CompTIA SecAI+ (CY0-001) — Exam Objectives & Study Blueprint
 
-> ⚠️ **UNOFFICIAL / COMMUNITY-MAINTAINED.** This blueprint is a study aid built from CompTIA's *announced* positioning of **SecAI+** and the broader, well-established AI-security body of knowledge (OWASP, NIST, MITRE, ISO). **It is not affiliated with, endorsed by, or sourced from CompTIA.** Domain names, weightings, objective numbering, question count, time, and passing score below are **community estimates** intended to make studying productive — they are **not** the official exam objectives.
+> 📌 **Aligned to the official blueprint.** This study guide is structured to the **CompTIA SecAI+ Certification Exam Objectives, Exam CY0-001 V1** (Objectives Document v4.0, © 2025 CompTIA, Inc.). The domains, weightings, objective numbering, and exam format below match that official document.
 >
-> ✅ **Before you rely on this, download the official exam objectives from CompTIA and reconcile any differences.** Where the official document differs, the official document wins. See [`README.md`](README.md) for how to use this repo and the full disclaimer.
+> ⚠️ **Unofficial study aid.** This repository is **community-made and NOT affiliated with, authorized by, or endorsed by CompTIA**, and it contains **no official or actual exam questions** — all practice questions here are original. Objective titles are reproduced/paraphrased for study alignment only. CompTIA®, SecAI+®, and Security+® are trademarks of CompTIA, Inc. Always cross-check the current objectives at CompTIA's site, as exam content is periodically updated.
 
 ---
 
-## Exam snapshot (community estimate)
+## Exam at a glance (official)
 
-| Attribute | Estimate (verify with CompTIA) |
+| Attribute | Value |
 |---|---|
-| Exam code | SecAI+ (e.g., AI0-001 — *placeholder*, confirm official code) |
-| Format | Multiple choice (single & multiple response) + performance-based questions (PBQs) |
-| Max questions | **90** |
-| Time | **165 minutes** |
-| Passing score | **~750 on a 100–900 scale** (community estimate) |
-| Recommended experience | Security+ (or equivalent) plus hands-on exposure to AI/ML systems; ~2–3 years security/IT |
-| Audience | Security analysts/engineers, AI/ML engineers, GRC, and architects securing AI systems |
+| Exam number | **CY0-001 V1** |
+| Number of questions | **Maximum of 60** |
+| Question types | **Multiple-choice and performance-based** |
+| Length of test | **60 minutes** |
+| Passing score | **600** (on a scale of 100–900) |
+| Recommended experience | 3–4 years of IT experience and ~2 years of hands-on cybersecurity experience |
 
-> These mirror the *style* of CompTIA professional exams (e.g., Security+/SecurityX). Treat the practice tests in this repo as **exam-realistic**, not exam-identical.
+**What the exam certifies you can do:** understand important AI concepts; secure AI systems using various technical controls; leverage AI to enhance corporate security posture while automating security tasks; and understand how governance, risk, and compliance (GRC) impacts AI technologies globally.
 
 ---
 
-## Domains & weightings (community estimate)
+## Domains & weightings (official)
 
 | # | Domain | Weight |
 |---|--------|:------:|
-| 1.0 | AI & Security Foundations | **16%** |
-| 2.0 | AI Threats, Attacks & Vulnerabilities | **24%** |
-| 3.0 | Securing the AI/ML Lifecycle | **22%** |
-| 4.0 | AI Governance, Risk & Compliance | **18%** |
-| 5.0 | AI Security Operations & Incident Response | **20%** |
+| 1.0 | Basic AI Concepts Related to Cybersecurity | **17%** |
+| 2.0 | Securing AI Systems | **40%** |
+| 3.0 | AI-assisted Security | **24%** |
+| 4.0 | AI Governance, Risk, and Compliance | **19%** |
 | | **Total** | **100%** |
 
-Practice-test question counts are allocated by weight (per 90-question test): D1 ≈ 14, D2 ≈ 22, D3 ≈ 20, D4 ≈ 16, D5 ≈ 18.
+**Practice-test allocation (per 60-question exam):** D1 ≈ 10, **D2 ≈ 24**, D3 ≈ 14, D4 ≈ 12. Domain 2 dominates — spend your study time accordingly.
 
 ---
 
-## Domain 1.0 — AI & Security Foundations (16%)
+## Domain 1.0 — Basic AI Concepts Related to Cybersecurity (17%)
 
-- **1.1** Explain AI/ML concepts relevant to security: supervised/unsupervised/reinforcement learning; deep learning & neural networks; **LLMs, generative AI, foundation models, transformers**; embeddings/vectors; tokens; **RAG**; **AI agents, tool use, and MCP (Model Context Protocol)**; fine-tuning vs prompting; **RLHF**; temperature/sampling; hallucination; context windows.
-- **1.2** Compare AI system components and architectures: training vs inference; **model serving & inference endpoints**; ML/LLM pipelines and **MLOps/LLMOps**; data pipelines; **model registry, feature store, vector database, AI gateway**; orchestration frameworks.
-- **1.3** Summarize the AI threat landscape and how AI changes the security model: expanded/novel attack surface; non-determinism; data-centric risk; the **AI/ML supply chain**; dual-use; autonomy and agency; speed/scale of impact.
-- **1.4** Explain core AI security principles and frameworks: CIA triad applied to AI (plus safety, privacy, fairness); **secure-by-design / Secure AI**; **NIST AI RMF**, **OWASP Top 10 for LLM Applications (2025)**, **OWASP ML Security Top 10**, **MITRE ATLAS**, **ISO/IEC 42001**, **Google SAIF**, NIST GenAI Profile (AI 600-1).
-- **1.5** Identify roles, responsibilities, and the **shared responsibility model** for AI: model provider vs platform/deployer vs application vs end user; data owners; AI governance roles; what changes for SaaS LLMs vs self-hosted models.
+### 1.1 Compare and contrast various AI types and techniques used in cybersecurity.
+- **Types of AI:** Generative AI · Machine learning · Statistical learning · Transformers · Deep learning · Generative adversarial networks (GANs) · Natural language processing (NLP) — Large language models (LLMs), Small language models (SLMs)
+- **Model training techniques:** Model validation · Supervised learning · Unsupervised learning · Reinforcement learning · Federated learning · Fine-tuning (Epoch, Pruning, Quantization)
+- **Prompt engineering:** System prompts · User prompts · One-shot prompting · Multi-shot prompting · Zero-shot prompting · System roles · Templates
 
-## Domain 2.0 — AI Threats, Attacks & Vulnerabilities (24%)
+### 1.2 Explain the importance of data security in relation to AI.
+- **Data processing:** Data cleansing · Data verification · Data lineage · Data integrity · Data provenance · Data augmentation · Data balancing
+- **Data types:** Structured · Semi-structured · Unstructured
+- **Watermarking**
+- **Retrieval-augmented generation (RAG):** Vector storage · Embeddings
 
-- **2.1** Analyze **adversarial machine-learning** attacks: **evasion / adversarial examples**, **data poisoning**, **backdoor/trojan** models, **model inversion**, **model extraction/stealing**, **membership inference**, perturbation/transferability, sponge attacks.
-- **2.2** Analyze **LLM/GenAI-specific** attacks: **direct and indirect prompt injection**, **jailbreaks**, **system-prompt leakage**, **insecure output handling**, **sensitive information disclosure**, training-data extraction/memorization, **excessive agency**, overreliance, **unbounded consumption** (model DoS / cost harvesting).
-- **2.3** Analyze attacks on the **AI supply chain and infrastructure**: poisoned/malicious **pretrained models** and datasets, **unsafe deserialization** (e.g., pickle), model-format risks, **model registry / hub compromise**, typosquatted models/packages, compromised dependencies, GPU/host and inference-server attacks.
-- **2.4** Analyze **agentic and tool-use** risks: excessive agency/permissions, **tool misuse and confused-deputy**, **MCP/tool-server** abuse, **SSRF and lateral movement via agents**, autonomous action abuse, memory/conversation poisoning, multi-agent collusion.
-- **2.5** Analyze **data and privacy** risks: PII/secret leakage, **memorization & regurgitation**, re-identification, data exfiltration via outputs, **RAG data leakage / broken document-level authorization**, embedding inversion.
-- **2.6** Map attacks to frameworks: place a given scenario in the **OWASP LLM Top 10 (2025)** and in **MITRE ATLAS** tactics/techniques; distinguish ML vs LLM vs infrastructure attacks.
+### 1.3 Explain the importance of security throughout the life cycle of AI.
+- **Business use case** (Alignment with corporate objectives)
+- **Data collection** (Trustworthiness, Authenticity)
+- **Data preparation**
+- **Model development/selection**
+- **Model evaluation**
+- **Deployment**
+- **Validation**
+- **Monitoring and maintenance**
+- **Feedback and iteration**
+- **Human-centric AI design principles:** Human-in-the-loop · Human oversight · Human validation
 
-## Domain 3.0 — Securing the AI/ML Lifecycle (22%)
+## Domain 2.0 — Securing AI Systems (40%)
 
-- **3.1** Secure **data**: governance, **provenance & lineage**, sanitization/validation, **poisoning defenses**, **differential privacy**, PII handling/minimization, data classification, dataset access control.
-- **3.2** Secure **training & development**: secure MLOps environments and isolation, secrets management, reproducibility, **model signing/integrity**, **MLBOM/SBOM**, dependency & model scanning, safe model serialization (e.g., safetensors).
-- **3.3** Secure **deployment & inference**: **AI gateway**, **input/output guardrails**, content filtering/moderation, **rate limiting & quotas**, sandboxing/isolation, least privilege, hardening of model-serving endpoints, network segmentation for AI.
-- **3.4** Implement **identity & access control for AI**: authentication/authorization, **per-agent identity and on-behalf-of (OBO)**, API-key and token hygiene, **tool allow-listing**, RBAC/ABAC, secrets and key management, scoping model/tool permissions.
-- **3.5** Secure **RAG and knowledge systems**: **vector-database security**, **retrieval/document-level authorization**, embedding security, source vetting/trust, **indirect-prompt-injection defenses** in retrieved content, data freshness/poisoning of the index.
-- **3.6** Apply **guardrails and defensive controls**: prompt hardening/templating, **output validation/encoding** (treat output as untrusted), PII redaction, canary tokens, **prompt-injection detection**, allow/deny lists, **human-in-the-loop** approvals for high-impact actions.
-- **3.7** **Test and evaluate** AI security: **AI red teaming**, adversarial/jailbreak testing, automated **evals** and benchmarks, model validation, regression testing for safety, continuous evaluation in CI/CD.
+### 2.1 Given a scenario, use AI threat-modeling resources.
+- **OWASP Top 10** — LLM Top 10, Machine Learning (ML) Security Top 10
+- **MIT AI Risk Repository**
+- **MITRE Adversarial Threat Landscape for Artificial-Intelligence Systems (ATLAS)**
+- **Common Vulnerabilities and Exposures (CVE) AI Working Group**
+- **Threat-modeling frameworks**
 
-## Domain 4.0 — AI Governance, Risk & Compliance (18%)
+### 2.2 Given a set of requirements, implement security controls for AI systems.
+- **Model controls:** Model evaluation · Model guardrails (Prompt templates)
+- **Gateway controls:** Prompt firewalls · Rate limits · Token limits · Input quotas (Data size, Quantity) · Modality limits · Endpoint access controls
+- **Guardrail testing and validation**
 
-- **4.1** Apply **AI governance frameworks**: **NIST AI RMF** functions (**Govern, Map, Measure, Manage**), **ISO/IEC 42001** (AI management system), OECD AI Principles, responsible-AI programs and committees.
-- **4.2** Manage **AI risk**: AI risk assessment, **AI impact assessment**, risk register, **third-party/model risk**, **model cards / system cards / datasheets**, acceptable-risk and risk acceptance.
-- **4.3** Apply **laws, regulations, and standards**: **EU AI Act risk tiers** (prohibited/high/limited/minimal), **GDPR and automated decision-making**, transparency/disclosure obligations, sector requirements, record-keeping.
-- **4.4** Address **ethics, fairness, bias, and trustworthiness**: bias types and sources, **fairness metrics**, **explainability/XAI**, transparency, accountability, safety, contestability.
-- **4.5** Manage **AI supply-chain and vendor risk**: model provenance and licensing, **open vs closed/proprietary models**, data licensing, third-party AI vendor assessment, EULA/usage-rights review.
-- **4.6** Establish **policies and acceptable use**: enterprise AI usage policy, **shadow AI**, data classification for AI, **DLP for generative AI**, training/awareness, approval workflows.
+### 2.3 Given a scenario, implement appropriate access controls for AI systems.
+- Model access · Data access · Agent access · Network/application programming interface (API) access
 
-## Domain 5.0 — AI Security Operations & Incident Response (20%)
+### 2.4 Given a scenario, implement data security controls for AI systems.
+- **Encryption requirements:** In transit · At rest · In use
+- **Data safety:** Data anonymization · Data classification labels · Data redaction · Data masking · Data minimization
 
-- **5.1** **Monitor and log** AI systems: prompt/response and **tool-call logging**, observability/telemetry, audit trails, **drift and performance monitoring**, cost/usage monitoring, privacy-aware logging.
-- **5.2** **Detect** AI threats: anomaly detection, **prompt-injection and jailbreak detection**, abuse/misuse detection, **detection engineering and SIEM integration**, **ATLAS-mapped detections**, canaries/honeytokens.
-- **5.3** **Respond** to AI incidents: AI-aware **IR lifecycle**, containment (**disable model/tool, revoke keys, kill switch**), **model rollback**, jailbreak/prompt-injection response, **data-leak and PII-exposure** response, playbooks and comms.
-- **5.4** Ensure **AI resilience and recovery**: model versioning/rollback, backups of models/indexes/configs, failover and **graceful degradation**, defense against **DoS / unbounded consumption / cost bombing**, business continuity for AI services.
-- **5.5** Manage **vulnerabilities and continuous improvement**: AI vulnerability management and disclosure, patching/updating models and dependencies, **threat intelligence for AI**, post-incident reviews, **purple teaming** and feedback loops.
+### 2.5 Given a scenario, implement monitoring and auditing for AI systems.
+- **Prompt monitoring** (Query, Response)
+- **Log monitoring · Log sanitization · Log protection**
+- **Response confidence level**
+- **Rate monitoring**
+- **AI cost monitoring:** Prompts · Storage · Response · Processing
+- **Auditing for quality and compliance:** Hallucinations · Accuracy · Bias and fairness · Access
+
+### 2.6 Given a scenario, analyze the evidence of an attack and suggest compensating controls for AI systems.
+- **Attacks:** Backdoor attacks · Trojan attacks · Prompt injection · Poisoning (Model poisoning, Data poisoning) · Jailbreaking · Input manipulation · Introducing biases · Circumventing AI guardrails · Manipulating application integrations · Model inversion · Model theft · AI supply chain attacks · Transfer learning attacks · Model skewing · Output integrity attacks · Membership inference · Insecure output handling · Model denial of service (DoS) · Sensitive information disclosure · Insecure plug-in design · Excessive agency · Overreliance
+- **Compensating controls:** Prompt firewalls · Model guardrails · Access controls · Data integrity controls · Encryption · Prompt templates · Rate limiting · Least privilege
+
+## Domain 3.0 — AI-assisted Security (24%)
+
+### 3.1 Given a scenario, use AI-enabled tools to facilitate security tasks.
+- **Tools/applications:** Integrated development environment (IDE) plug-ins · Browser plug-ins · Command-line interface (CLI) plug-ins · Chatbots · Personal assistants · Model Context Protocol (MCP) server
+- **Use cases:** Signature matching · Code quality and linting · Vulnerability analysis · Automated penetration testing · Anomaly detection · Pattern recognition · Incident management · Threat modeling · Fraud detection · Translation · Summarization
+
+### 3.2 Explain how AI enables or enhances attack vectors.
+- **AI-generated content (deepfake):** Impersonation · Misinformation · Disinformation
+- **Adversarial networks · Reconnaissance · Social engineering · Obfuscation · Automated data correlation**
+- **Automated attack generation:** Attack vector discovery · Payloads · Malware · Honeypot · Distributed denial of service (DDoS)
+
+### 3.3 Given a scenario, use AI to automate security tasks.
+- **Scripting tools:** Low-code · No-code
+- **Document synthesis and summarization**
+- **Incident response ticket management**
+- **Change management:** AI-assisted approvals · Automated deployment/rollback
+- **AI agents**
+- **Continuous integration and continuous deployment (CI/CD):** Code scanning · Software composition analysis · Unit testing · Regression testing · Model testing · Automated deployment/rollback
+
+## Domain 4.0 — AI Governance, Risk, and Compliance (19%)
+
+### 4.1 Explain organizational governance structures that support AI.
+- **Organizational structures:** AI Center of Excellence · AI policies and procedures
+- **AI-related roles:** Data scientist · AI architect · Machine learning engineer · Platform engineer · MLOps engineer · AI security architect · AI governance engineer · AI risk analyst · AI auditor · Data engineer
+
+### 4.2 Explain risks associated with AI.
+- **Responsible AI:** Fairness · Reliability and safety · Transparency · Privacy and security · Differential privacy · Explainability · Inclusiveness · Accountability · Consistency · Awareness training
+- **Risks:** Introduction of bias · Accidental data leakage · Reputational loss · Accuracy and performance of the model · Intellectual Property (IP)-related risks · Autonomous systems
+- **Shadow IT:** Shadow AI
+
+### 4.3 Summarize the impact of compliance on business use and development of AI.
+- **European Union (EU) AI Act**
+- **Organisation for Economic Co-operation and Development (OECD) standards**
+- **International Organization for Standardization (ISO) AI standards**
+- **National Institute of Standards and Technology (NIST) AI Risk Management Framework (AIRMF)**
+- **Corporate policies:** Sanctioned vs. unsanctioned · Private vs. public models · Sensitive data governance
+- **Third-party compliance evaluations**
+- **Data sovereignty**
 
 ---
 
 ## How everything in this repo maps to the blueprint
 
-- [`study-guide/`](study-guide/) — one file per domain (1.0–5.0) plus a [frameworks crosswalk](study-guide/frameworks-crosswalk.md), [glossary](study-guide/glossary.md), and [acronyms](study-guide/acronyms.md).
-- [`practice-tests/`](practice-tests/) — 3 variants × 90 questions, allocated by the weightings above; each question is tagged to a domain objective (e.g., `2.2`).
+- [`study-guide/`](study-guide/) — one chapter per official domain (1.0–4.0) plus a [frameworks crosswalk](study-guide/frameworks-crosswalk.md), [glossary](study-guide/glossary.md), and [acronyms](study-guide/acronyms.md) (aligned to the official SecAI+ acronym list).
+- [`practice-tests/`](practice-tests/) — 3 variants × **60 questions** (matching the real exam length), allocated by the official weightings; each question tagged to an objective (e.g., `2.6`).
 - [`flashcards/`](flashcards/) — Anki deck tagged by domain.
-- [`cheatsheets/`](cheatsheets/) and [`study-plan/`](study-plan/) — quick references and a 4-week plan keyed to these domains.
+- [`cheatsheets/`](cheatsheets/) and [`study-plan/`](study-plan/) — quick references and a study plan keyed to these domains.
 
-*Last reviewed by maintainer: see git history. Reconcile against the official CompTIA SecAI+ objectives before exam day.*
+*This blueprint mirrors CompTIA's published CY0-001 V1 objectives. CompTIA periodically updates exams — verify against the current objectives before exam day.*

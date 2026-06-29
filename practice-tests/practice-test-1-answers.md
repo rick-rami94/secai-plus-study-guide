@@ -1,212 +1,146 @@
-# CompTIA SecAI+ — Practice Test 1: Answer Key & Explanations (Unofficial / Community)
+# CompTIA SecAI+ (CY0-001) — Practice Test 1 — Answer Key & Explanations (Unofficial)
 
-> ⚠️ **UNOFFICIAL & COMMUNITY-MAINTAINED.** Study aid only — not affiliated with, endorsed by, or sourced from CompTIA. Reconcile against the official CompTIA SecAI+ objectives. Questions: [`practice-test-1.md`](practice-test-1.md) • Blueprint: [`../exam-objectives.md`](../exam-objectives.md).
+> ⚠️ **UNOFFICIAL & COMMUNITY-MAINTAINED.** Aligned to **CY0-001 V1**; **no official or actual exam questions** are reproduced. Not affiliated with or endorsed by CompTIA. Verify against the current official objectives: [`../exam-objectives.md`](../exam-objectives.md). Questions: [`practice-test-1.md`](practice-test-1.md).
 
-## Answer key (for fast self-scoring)
+---
 
-| Q | A | Q | A | Q | A | Q | A | Q | A |
-|---|---|---|---|---|---|---|---|---|---|
-| 1 | B | 19 | A | 37 | B | 55 | B | 73 | C |
-| 2 | A | 20 | D | 38 | B | 56 | D | 74 | B |
-| 3 | D | 21 | B | 39 | D | 57 | B | 75 | B |
-| 4 | A | 22 | C | 40 | C | 58 | C | 76 | D |
-| 5 | B | 23 | A | 41 | B | 59 | D | 77 | B |
-| 6 | D | 24 | D | 42 | A | 60 | A | 78 | C |
-| 7 | A | 25 | B | 43 | D | 61 | B | 79 | A |
-| 8 | B | 26 | C | 44 | A | 62 | A | 80 | D |
-| 9 | C | 27 | D | 45 | B | 63 | C | 81 | B |
-| 10 | D | 28 | A | 46 | C | 64 | D | 82 | A |
-| 11 | C | 29 | A | 47 | D | 65 | A | 83 | C |
-| 12 | C | 30 | B | 48 | A | 66 | C | 84 | D |
-| 13 | A | 31 | C | 49 | C | 67 | D | 85 | A |
-| 14 | C | 32 | A | 50 | C | 68 | A | 86 | C |
-| 15 | D | 33 | D | 51 | D | 69 | C | 87 | D |
-| 16 | B | 34 | C | 52 | A | 70 | B | 88 | B |
-| 17 | B | 35 | D | 53 | C | 71 | D | 89 | B |
-| 18 | C | 36 | A | 54 | B | 72 | A | 90 | C |
+## Answer key
 
-Community pass guide: **~750/900 ≈ 83% correct** (≈ 75 of 90).
+| Q | A | Q | A | Q | A | Q | A | Q | A | Q | A |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | B | 11 | D | 21 | B | 31 | D | 41 | B | 51 | D |
+| 2 | C | 12 | A | 22 | C | 32 | B | 42 | A | 52 | A |
+| 3 | A | 13 | B | 23 | D | 33 | B | 43 | C | 53 | A |
+| 4 | A | 14 | C | 24 | A | 34 | A | 44 | D | 54 | B |
+| 5 | B | 15 | C | 25 | C | 35 | D | 45 | B | 55 | C |
+| 6 | D | 16 | D | 26 | C | 36 | A | 46 | C | 56 | A |
+| 7 | D | 17 | B | 27 | D | 37 | C | 47 | D | 57 | D |
+| 8 | C | 18 | A | 28 | A | 38 | B | 48 | B | 58 | C |
+| 9 | A | 19 | D | 29 | C | 39 | C | 49 | C | 59 | D |
+| 10 | B | 20 | A | 30 | B | 40 | D | 50 | A | 60 | B |
+
+**Distribution:** A=15, B=15, C=15, D=15. Domain mix: D1=10, D2=24, D3=14, D4=12.
 
 ---
 
 ## Explanations
 
-**1.** Correct: **B** — [1.3] AI adds non-determinism and a data-centric attack surface, so untrusted input at inference can change behavior. A is false (perimeter controls still matter); C is wrong (the surface expands, not shrinks); D ignores inference-time and supply-chain risk.
+**1.** Correct: **B** — [1.3] Security is a life-cycle property; poisoned/untrustworthy data and misaligned objectives enter at the use-case and data-collection stages and are expensive to fix later. **A** is wrong because inference-time controls mitigate but never fully compensate for upstream flaws. **C** is false—every phase carries obligations. **D** is false—evaluation and monitoring remain essential.
 
-**2.** Correct: **A** — [2.2] The malicious instructions arrive *inside data the model processes* (the ticket), making this indirect prompt injection. Direct injection (B) is typed by the user into the prompt; poisoning (C) corrupts training data; inversion (D) reconstructs training data.
+**2.** Correct: **C** — [2.6] Malicious instructions hidden in *content the model later processes* (a vendor email) is **indirect** prompt injection (OWASP LLM01). Membership inference (**A**) probes training-set membership; poisoning (**B**) corrupts training data; model inversion (**D**) reconstructs training inputs—none match exfiltration triggered by embedded text.
 
-**3.** Correct: **D** — [3.3] An AI gateway centralizes authentication, rate limiting, and content filtering for LLM traffic. A vector DB (A) stores embeddings, a feature store (B) serves features, and a model registry (C) versions model artifacts.
+**3.** Correct: **A** — [3.1] A CLI plug-in backed by an MCP server gives a local, tool-calling model a standardized interface to invoke pentest tools. A browser plug-in (**B**) summarizes pages; signature AV (**C**) and a spreadsheet macro (**D**) cannot orchestrate exploitation steps.
 
-**4.** Correct: **A** — [4.3] Employment/worker-selection systems are explicitly High risk under the EU AI Act. It is regulated but not Prohibited (D), and clearly above Limited (B) or Minimal (C).
+**4.** Correct: **A** — [2.2] Model-layer guardrails—constrained system-prompt templates plus output filtering—keep the bot on-policy. Network segmentation (**B**) and at-rest encryption (**C**) are valid controls but don't shape model behavior; enlarging the context window (**D**) does nothing for safety.
 
-**5.** Correct: **B** — [5.3] Containment comes first: disable the agent/tool and revoke its credentials to stop active abuse. A post-incident review (A) and retraining (C) come later; regulator notification (D) follows assessment, not as the first containment action.
+**5.** Correct: **B** — [4.3] Employment/recruitment decision systems are **high-risk** under the EU AI Act, triggering risk management, conformity assessment, and human oversight. It is neither minimal/limited-risk (**A**, **D**) nor prohibited (**C**)—prohibited uses include things like social scoring.
 
-**6.** Correct: **D** — [2.1] Determining whether a specific record was in the training set is membership inference. Extraction (A) clones the model, inversion (B) reconstructs data, and evasion (C) fools inference with crafted inputs.
+**6.** Correct: **D** — [1.1] Learning a mapping from **labeled** inputs to known outputs is **supervised** learning. Reinforcement (**A**) learns from reward signals; unsupervised (**B**) needs no labels; federated (**C**) describes *where* training happens, not labeling.
 
-**7.** Correct: **A** — [1.4] The NIST AI RMF functions are Govern, Map, Measure, Manage. B is the NIST CSF, C is the PDCA cycle, and D is from the NIST RMF for systems (SP 800-37).
+**7.** Correct: **D** — [2.6] Querying a model to clone it is **model theft/extraction**; rate limiting and query/endpoint access controls most directly curb it. Data poisoning (**A**), membership inference (**B**), and model inversion (**C**) are different attacks with different aims.
 
-**8.** Correct: **B** — [3.5] Enforcing document-level authorization at retrieval ensures users only get chunks they may see. Encryption at rest (A) protects stored data confidentiality but still returns chunks to any querent; a system-prompt instruction (C) is bypassable and is not real access control; output moderation (D) filters content categories but does not enforce per-user permissions.
+**8.** Correct: **C** — [2.1] **MITRE ATLAS** is the AI/ML-specific adversary TTP knowledge base. ASVS (**A**), CIS Controls (**B**), and the API Top 10 (**D**) are general security resources, not AI-adversary taxonomies.
 
-**9.** Correct: **C** — [5.1] Investigating agent misuse requires prompt, response, and tool-call traces, with privacy-aware redaction. Outputs only (A) or network metadata only (B) miss the key evidence, and disabling logging (D) defeats investigation.
+**9.** Correct: **A** — [3.2] An AI-cloned voice used to deceive staff is **deepfake-enabled impersonation** for social engineering. DDoS (**B**), SQLi (**C**), and XSS (**D**) are unrelated technical attack classes.
 
-**10.** Correct: **D** — [2.2] Driving up cost and exhausting compute via heavy requests is LLM10 Unbounded Consumption (model DoS / cost harvesting). Not injection (A), poisoning (B), or output handling (C).
+**10.** Correct: **B** — [4.2] Staff pasting confidential data into an unsanctioned public tool is **accidental data leakage via shadow AI**. Model skewing (**A**), reputational loss from bias (**C**), and IP infringement in images (**D**) are different risks.
 
-**11.** Correct: **C** — [4.1] ISO/IEC 42001 defines requirements for an AI management system (AIMS). 27001 (A) is for ISMS, 800-53 (B) is a control catalog, and 9001 (D) is quality management.
+**11.** Correct: **D** — [2.4] Computing over data on an untrusted host without exposing plaintext requires **encryption in use** (confidential computing/homomorphic approaches). In transit (**A**) and at rest (**B**) leave plaintext exposed during processing; RBAC (**C**) is access control, not cryptographic protection of the compute.
 
-**12.** Correct: **C** — [3.6] LLM output must be treated as untrusted and validated/encoded before use to prevent injection and XSS (LLM05). Trusting it (A/B) or storing it raw (D) is unsafe.
+**12.** Correct: **A** — [1.2] RAG stores text as **embeddings in a vector database** retrieved by similarity. Timestamped logs (**B**), relational keys (**C**), and exact-hash matching (**D**) don't capture semantic similarity.
 
-**13.** Correct: **A** — [1.1] RAG retrieves external documents at query time without changing weights. Fine-tuning (B) and RLHF (C) update weights; quantization (D) compresses the model.
+**13.** Correct: **B** — [2.3] Enforce **least-privilege, role-based data-access** so each identity reaches only authorized sources. Shared accounts (**A**) destroy accountability; guardrails alone (**C**) aren't an access control; broad read access (**D**) defeats segmentation despite encryption.
 
-**14.** Correct: **C** — [5.2] A guardrail classifier that flags injection patterns and feeds the SIEM gives real-time detection. Relying on the model alone (A) is unreliable, blocking all external traffic (B) is impractical, and output encoding (D) is a valid control but addresses output-handling/XSS rather than detecting injection attempts.
+**14.** Correct: **C** — [3.3] An AI agent embedded in IR/ticketing that auto-handles low severity but escalates high severity to a human implements human-in-the-loop automation. Disabling alerts (**A**), full autonomy (**B**), and a nightly report (**D**) don't meet the requirement.
 
-**15.** Correct: **D** — [2.3] Loading an untrusted pickle can execute arbitrary code during deserialization. Bias (A), file size (B), and embedding misalignment (C) are not the primary security risk.
+**15.** Correct: **C** — [2.6] Slowly feeding crafted feedback to bend an online-learning model's decision boundary is **model skewing via data poisoning**. Prompt injection (**A**), inversion (**B**), and insecure output handling (**D**) don't fit the evidence.
 
-**16.** Correct: **B** — [3.2] Loading untrusted artifacts in a sandboxed, network-isolated environment with least privilege and resource limits contains any code execution that a malicious file attempts on load. Loading directly on a production GPU host (A) maximizes blast radius; a `.bin` extension (C) implies nothing about safety — serialized formats can still execute code; disabling endpoint security (D) removes a key detection layer.
+**16.** Correct: **D** — [4.1] A central body setting standards, sharing patterns, and vetting tools is an **AI Center of Excellence**. A bug bounty (**A**), SOC (**B**), and CAB (**C**) serve other functions.
 
-**17.** Correct: **B** — [4.2] A model card documents intended use, performance, limitations, and ethical considerations. An SBOM (A) lists components, a DPA (C) governs data processing, and a pen-test report (D) covers security testing.
+**17.** Correct: **B** — [2.5] **Response confidence-level monitoring** flags low-confidence, likely-hallucinated outputs. CPU/storage/port metrics (**A**, **C**, **D**) say nothing about answer reliability.
 
-**18.** Correct: **C** — [1.5] With a SaaS LLM, the deployer still controls what data goes into prompts and how outputs are handled. The provider owns GPU firmware (A), training infrastructure (B), and model architecture (D).
+**18.** Correct: **A** — [1.3] A required human review/override of every adverse decision is **human-in-the-loop oversight**. The others (**B**, **C**, **D**) are unrelated ML/data concepts.
 
-**19.** Correct: **A** — [2.4] A privileged agent misused via user input to reach unauthorized data is the confused-deputy problem driven by excessive agency. The others (B, C, D) are unrelated attack classes.
+**19.** Correct: **D** — [2.2] A **prompt firewall** inspects and blocks injection/jailbreak prompts at the gateway before they reach the model. Raising temperature (**A**), encrypting logs (**B**), and adding GPUs (**C**) don't screen prompts.
 
-**20.** Correct: **D** — [5.3] Rolling back to the last known-good model immediately stops the regression. Rate limits (A) and disabling logging (C) do not fix the leak, and retraining (B) is too slow for active exposure.
+**20.** Correct: **A** — [3.1] In-editor, real-time insecure-pattern detection and fixes is an **IDE plug-in** doing AI-assisted analysis/linting. An IDS (**B**), SIEM rule (**C**), and disk-encryption agent (**D**) don't operate in the editor.
 
-**21.** Correct: **B** — [3.4] On-behalf-of (OBO) delegation scopes downstream access to the requesting user's permissions. Shared accounts (A), global admin (C), and disabling auth (D) all violate least privilege.
+**21.** Correct: **B** — [4.3] The **NIST AI RMF** is the voluntary, function-based (Govern, Map, Measure, Manage) framework for AI risk. PCI DSS (**A**) is payment-card scope; the EU AI Act (**C**) is binding law, not a voluntary RMF; ISO/IEC 27001 (**D**) is an ISMS standard.
 
-**22.** Correct: **C** — [2.5] Reconstructing source text from stored vectors is embedding inversion. Membership inference (A) tests set membership, poisoning (B) corrupts data, and injection (D) manipulates prompts.
+**22.** Correct: **C** — [2.6] Leaking the system prompt and an embedded key maps to **LLM07 System Prompt Leakage** and **LLM02 Sensitive Information Disclosure** (2025 list). Excessive Agency (**A**), Poisoning (**B**), and Supply Chain (**D**) describe different risks.
 
-**23.** Correct: **A** — [4.6] Unsanctioned use of public AI tools with confidential data is shadow AI. Extraction (B), data residency (C), and federated learning (D) describe different concepts.
+**23.** Correct: **D** — [1.1] Grouping similar **unlabeled** events is **unsupervised** learning (clustering). Supervised (**A**) and RLHF (**B**) need labels/rewards; federated (**C**) describes distributed training, not the labeling paradigm.
 
-**24.** Correct: **D** — [1.2] A vector database stores embeddings and performs similarity search. A registry (A) versions models, a feature store (B) serves ML features, and a gateway (C) brokers/secures calls.
+**24.** Correct: **A** — [2.1] The **MIT AI Risk Repository** is a continually updated, peer-reviewed taxonomy organized by cause, domain, and life-cycle stage. A single product's CVEs (**B**), the web Top 10 (**C**), and a vendor whitepaper (**D**) aren't comprehensive AI-risk taxonomies.
 
-**25.** Correct: **B** — [5.4] Serving reduced/cached functionality during an outage is graceful degradation with failover. Autoscaling (A) and blue-green (C) are deployment/scaling tactics; differential privacy (D) is a privacy technique.
+**25.** Correct: **C** — [3.2] Auto-scanning footprints and correlating breach data to craft phishing is **AI-automated reconnaissance and data correlation**. Watermarking (**A**), federated learning (**B**), and differential privacy (**D**) are defensive/unrelated.
 
-**26.** Correct: **C** — [2.2] Exposing the hidden system instructions (the model's internal rules and guidelines) is LLM07 System Prompt Leakage. Prompt injection (A) may be the vector but is not the exposure itself; LLM02 Sensitive Information Disclosure (B) covers leakage of user/training data or secrets — here only the instructions leak, not embedded data; misinformation (D) is unrelated.
+**26.** Correct: **C** — [2.4] **Data anonymization** (with identifier minimization) preserves aggregate utility while preventing re-identification. Replication (**A**), Base64 (**B**), and compression (**D**) provide no privacy.
 
-**27.** Correct: **D** — [3.1] Provenance and lineage tracking with integrity verification confirms data came from trusted sources untampered — the core poisoning defense. Differential privacy (A) protects individual records' privacy, not source integrity; inference rate-limiting (B) addresses consumption; output encoding (C) handles model responses — none verify training-data trust.
+**27.** Correct: **D** — [4.2] Same decisions for similar inputs = **consistency**; explaining the driving factors = **explainability**. The other pairs (**A**, **B**, **C**) are performance or ML-technique terms, not responsible-AI principles.
 
-**28.** Correct: **A** — [4.3] Government social scoring is a Prohibited (unacceptable-risk) practice under the EU AI Act. Spam filtering (B), disclosed chatbots (C), and game NPCs (D) are minimal/limited risk.
+**28.** Correct: **A** — [2.3] Scope the agent's identity to **least privilege**—only the tools/records each task needs—so a hijack via injection has minimal blast radius. Longer tokens (**B**), shared admin keys (**C**), and disabled logging (**D**) increase risk.
 
-**29.** Correct: **A** — [2.1] Imperceptible perturbations that cause misclassification at inference are evasion (adversarial examples). Poisoning (B) corrupts training, inversion (C) reconstructs data, membership inference (D) tests set membership.
+**29.** Correct: **C** — [3.3] Code scanning, SCA, and model tests that gate every commit belong **in the CI/CD pipeline**. A quarterly review (**A**), the system prompt (**B**), and user docs (**D**) can't gate merges.
 
-**30.** Correct: **B** — [5.5] Combining red and blue teams in a continuous feedback loop is purple teaming. A bug bounty (A), chaos engineering (C), and canary deployment (D) are different practices.
+**30.** Correct: **B** — [3.3] A **low-code/no-code automation platform** lets analysts build workflows without full coding. Assembly (**A**), manual email (**C**), and disabling automation (**D**) miss the requirement.
 
-**31.** Correct: **C** — [3.3] Output guardrails / content moderation on responses block disallowed content and secret leakage. Input-side prompt filtering and rate limiting (A) act before the model and do not screen what it returns; network segmentation/egress filtering (B) controls connectivity, not response content; model signing (D) verifies artifact integrity — none moderate outputs.
+**31.** Correct: **D** — [1.2] **Data provenance** (origin) and **data lineage** (transformations) provide the audit trail. Quantization/pruning (**A**), embeddings/vector storage (**B**), and prompting styles (**C**) are unrelated.
 
-**32.** Correct: **A** — [1.4] MITRE ATLAS catalogs adversary tactics/techniques against AI/ML. ATT&CK (B) covers enterprise IT broadly; CVE (C) and CWE (D) catalog vulnerabilities/weaknesses.
+**32.** Correct: **B** — [2.5] **Log protection** (integrity/immutability + access control) keeps logs tamper-evident, while **log sanitization/redaction** strips secrets users submitted. Open plaintext storage (**A**), immediate deletion (**C**), and encrypting only weights (**D**) fail one or both goals.
 
-**33.** Correct: **D** — [2.6] Executing unsanitized model output that causes injection is LLM05 Improper Output Handling. Prompt injection (A) is the input side, excessive agency (B) is over-permissioned action, and unbounded consumption (C) is resource exhaustion.
+**33.** Correct: **B** — [4.1] The **AI security architect** designs secure AI architecture and protective controls. A data engineer (**A**) builds pipelines; an AI auditor (**C**) assesses; an MLOps engineer (**D**) operationalizes models.
 
-**34.** Correct: **C** — [4.4] Explainability (XAI) lets the system provide a meaningful reason for a decision. Robustness (A) concerns resistance to perturbed inputs, reproducibility (B) concerns consistent results across runs, and availability (D) concerns uptime — none deliver a human-understandable rationale for a denial.
+**34.** Correct: **A** — [2.2] FIRST **test and validate the guardrails** with adversarial red-team prompts before trusting them. Raising token limits (**B**), publishing the system prompt (**C**), and removing rate limits (**D**) weaken security.
 
-**35.** Correct: **D** — [5.2] Unique planted records that should never appear legitimately are canary tokens (honeytokens) used for exfiltration detection. DP noise (A), adversarial examples (B), and feature flags (C) serve other purposes.
+**35.** Correct: **D** — [3.1] Baselining normal behavior and surfacing statistical outliers is **anomaly detection / pattern recognition**. Linting (**A**), translation (**B**), and signature matching (**C**) won't catch novel behavior.
 
-**36.** Correct: **A** — [3.7] Systematically probing an LLM for jailbreaks and harmful outputs is AI red teaming. Unit (B), load (C), and static analysis (D) do not target adversarial model behavior.
+**36.** Correct: **A** — [2.6] Consistent misclassification triggered only by a specific pattern indicates a **backdoor/trojan** with a planted trigger. Membership inference (**B**), DoS (**C**), and info disclosure (**D**) don't match.
 
-**37.** Correct: **B** — [2.3] A deliberately misspelled lookalike model name to catch typos is typosquatting. Inversion (A), sponge (C), and injection (D) are different attacks.
+**37.** Correct: **C** — [1.3] Confirming continued real-world performance and detecting drift after release is **monitoring and maintenance**. Use-case definition (**A**), data prep (**B**), and model selection (**D**) occur earlier.
 
-**38.** Correct: **B** — [1.1] Temperature controls randomness/creativity of sampling. Context window (A) and token limit (C) govern length; embedding size (D) is a representation dimension.
+**38.** Correct: **B** — [2.1] The **CVE AI Working Group** coordinates identifying, numbering, and disclosing AI-component vulnerabilities. The MIT repository (**A**), ATLAS case studies (**C**), and the ML Top 10 (**D**) serve other purposes.
 
-**39.** Correct: **D** — [5.3] A PII exposure requires executing the data-leak playbook, including breach assessment and notification obligations. Rotating API keys and calling it resolved (A) ignores those obligations; deleting logs (B) destroys evidence; disabling explainability (C) is irrelevant to the breach response.
+**39.** Correct: **C** — [4.3] Keeping data and its processing within national borders is **data sovereignty**. Differential privacy (**A**), quantization (**B**), and rate limiting (**D**) are unrelated.
 
-**40.** Correct: **C** — [2.2] An over-permissioned assistant taking a real-world action (issuing a refund) is LLM06 Excessive Agency. Sensitive disclosure (A), misinformation (B), and unbounded consumption (D) do not fit the over-permissioning root cause.
+**40.** Correct: **D** — [2.4] **Data redaction/masking** of sensitive fields before storage keeps logs useful while removing readable card numbers. Longer retention (**A**), replication (**B**), and compression (**C**) don't protect the data.
 
-**41.** Correct: **B** — [3.5] Retrieved content can carry indirect injections, so treat it as untrusted and sanitize/filter before prompting. Encrypting the index at rest (A) addresses storage confidentiality; document-level access control (C) is a real RAG control but addresses authorization, not hidden instructions inside authorized documents; raising top-k (D) pulls in more potentially malicious content — none neutralize injection payloads.
+**41.** Correct: **B** — [3.2] Generative mutation that changes signatures but preserves behavior is **AI-driven obfuscation / polymorphic payload generation**. Honeypots (**A**), lineage tracking (**C**), and differential privacy (**D**) are defensive/unrelated.
 
-**42.** Correct: **A** — [4.5] Verifying producer, license, and signatures addresses model provenance and licensing risk. Latency (B), cost (C), and context limits (D) are operational, not governance, concerns here.
+**42.** Correct: **A** — [1.1] Lowering weight precision to shrink and speed a model is **quantization**. RL (**B**), zero-shot prompting (**C**), and data balancing (**D**) are different concepts.
 
-**43.** Correct: **D** — [2.4] Coercing an agent's fetch tool to hit the cloud metadata endpoint is SSRF via the agent. Membership inference (A), poisoning (B), and extraction (C) are unrelated.
+**43.** Correct: **C** — [3.2] A deceptive AI-generated fake service to lure and study attackers is an **AI-generated honeypot**. Adversarial examples (**A**), differential privacy (**B**), and membership inference (**D**) don't describe deception environments.
 
-**44.** Correct: **A** — [1.3] Autonomous tool-chaining at machine speed without human checkpoints scales harm rapidly. HTTPS (B), databases (C), and deterministic rules (D) do not characterize agentic risk.
+**44.** Correct: **D** — [1.1] Training across sites that share only parameters, not raw data, is **federated learning**. RL (**A**), supervised fine-tuning (**B**), and transfer learning (**C**) don't describe this decentralized scheme.
 
-**45.** Correct: **B** — [5.1] Silent accuracy decline from shifting input distributions is detected by drift/performance monitoring. Rate limiting (A), output encoding (C), and canaries (D) address other concerns.
+**45.** Correct: **B** — [2.5] Tracking spend across prompt, processing, response, and storage is **AI cost monitoring**. SMART (**A**), TLS-expiry (**C**), and badge logs (**D**) don't track AI spend.
 
-**46.** Correct: **C** — [3.6] Human-in-the-loop approval for high-impact actions (like wire transfers) limits damage from errors or manipulation. Output encoding (A) handles response rendering; verbose logging (B) is detective, not preventive; input rate limiting (D) throttles request volume but still permits a single damaging transfer — none gate the high-impact action itself.
+**46.** Correct: **C** — [3.3] Pre-screening low-risk changes, recommending approval, and auto-deploy/rollback on failed health checks is **AI-assisted change approvals with automated deployment/rollback**. Paging for every change (**A**), freezing changes (**B**), and disabling health checks (**D**) don't fit.
 
-**47.** Correct: **D** — [2.2] Leaking another customer's data from context is LLM02 Sensitive Information Disclosure. Prompt injection (A), improper output handling (B), and unbounded consumption (C) do not describe the cross-tenant data leak.
+**47.** Correct: **D** — [4.2] **Shadow AI** is AI tools/services used **without organizational approval, oversight, or governance**. Approved-but-disabled features (**A**), reviewed open-source models (**B**), and data-center cooling load (**C**) are not shadow AI.
 
-**48.** Correct: **A** — [4.1] Policies, accountability, and risk culture are the Govern function of the NIST AI RMF. Map (B) frames context, Measure (C) analyzes/tracks, and Manage (D) acts on prioritized risks.
+**48.** Correct: **B** — [2.2] **Rate limits, token limits, and input quotas** cap per-user volume and request size to blunt model-DoS/abuse at the gateway. Encryption/key rotation (**A**), anonymization/masking (**C**), and federated learning (**D**) don't throttle requests.
 
-**49.** Correct: **C** — [3.4] Restricting an agent to a vetted, explicit set of tools is tool allow-listing. Rate limiting (A) caps request volume, output encoding (B) sanitizes responses, and network egress filtering (D) restricts outbound destinations — none define which tools the agent may call.
+**49.** Correct: **C** — [2.3] Restricting which networks/apps can call the inference API uses **network/API access controls** (allowlisting + authenticated endpoints). Context window (**A**), watermarking (**B**), and more epochs (**D**) don't restrict callers.
 
-**50.** Correct: **C** — [5.4] Per-user rate limits, quotas, and spending caps with alerting defend against cost-bombing/unbounded consumption. Signing API responses (A), output content moderation (B), and endpoint differential privacy (D) are legitimate controls for integrity, content, and privacy respectively but place no bound on request volume or cost.
+**50.** Correct: **A** — [3.1] Condensing long multi-document input into a concise brief is **summarization**. Fraud detection (**B**), signature matching (**C**), and pentesting (**D**) are different use cases.
 
-**51.** Correct: **D** — [2.1] Cloning a model from query input/output pairs is model extraction (stealing). Membership inference (A), evasion (B), and poisoning (C) are different attacks.
+**51.** Correct: **D** — [4.1] Independent evaluation of AI systems for policy/regulatory compliance and control effectiveness is the **AI auditor**. ML engineer (**A**), platform engineer (**B**), and data scientist (**C**) build rather than independently audit.
 
-**52.** Correct: **A** — [1.4] Google SAIF (Secure AI Framework) provides a secure-by-design conceptual approach for AI. PCI DSS (B), COBIT (C), and ITIL (D) are not AI-specific security frameworks.
+**52.** Correct: **A** — [1.2] Rotating, cropping, and adding noise to expand a training set is **data augmentation**. Redaction (**B**), quantization (**C**), and watermarking (**D**) serve other ends.
 
-**53.** Correct: **C** — [3.2] Cryptographic model signing and integrity verification proves authenticity and detects tampering. Encrypted-bucket storage (A) protects confidentiality at rest but not authenticity through the pipeline; output moderation (B) screens responses; antivirus scanning (D) catches known malware signatures but does not prove the artifact is the genuine, unaltered model.
+**53.** Correct: **A** — [2.1] FIRST apply a **threat-modeling framework** to map data flows and trust boundaries before coding. Buying GPUs (**B**), raising temperature (**C**), and skipping modeling (**D**) don't enumerate threats.
 
-**54.** Correct: **B** — [4.2] Documenting potential harms and mitigations before deploying a high-risk system is an AI impact assessment. A pen test (A), DR plan (C), and SLA (D) serve different purposes.
+**54.** Correct: **B** — [3.2] Mass-producing convincing fake articles/posts to sway opinion is **AI-generated disinformation/misinformation at scale**. Membership inference (**A**), model inversion (**C**), and insecure plug-in design (**D**) are unrelated.
 
-**55.** Correct: **B** — [2.5] Reproducing secrets verbatim from training data is memorization and regurgitation. Extraction (A), evasion (C), and sponge (D) are unrelated.
+**55.** Correct: **C** — [2.4] Sharing only the data strictly necessary is **data minimization**. Augmentation (**A**), balancing (**B**), and provenance (**D**) don't limit disclosure.
 
-**56.** Correct: **D** — [5.5] Subscribing to feeds tracking new attack methods is threat intelligence for AI. Differential privacy (A), load testing (B), and data lineage (C) are different practices.
+**56.** Correct: **A** — [4.3] Sound policy processes sensitive data only with **sanctioned, private models under governance**, not unsanctioned public ones. Popularity (**B**), trust-based exemptions (**C**), and "private = no governance" (**D**) are unsafe.
 
-**57.** Correct: **B** — [3.3] Network segmentation with egress filtering prevents the inference server from reaching arbitrary hosts. Input guardrails (A) screen prompts, output encoding (C) handles responses, and model signing (D) verifies artifact integrity — none restrict outbound network connections.
+**57.** Correct: **D** — [2.5] Continuously checking hallucination rate, accuracy drift, and bias/fairness is **auditing for quality and compliance**. Latency (**A**), power usage (**B**), and TCP counts (**C**) don't measure output quality or fairness.
 
-**58.** Correct: **C** — [2.2] A persona prompt that bypasses safety guidelines is a jailbreak. Inversion (A), poisoning (B), and membership inference (D) are different attacks.
+**58.** Correct: **C** — [3.3] Drafting IR ticket updates and synthesizing post-incident summaries is **document synthesis/summarization and IR ticket management**. Signature matching (**A**), adversarial training (**B**), and segmentation (**D**) don't apply.
 
-**59.** Correct: **D** — [1.2] Training learns/updates weights from data; inference applies the fixed model to produce outputs. A reverses the two, B is false, and C mischaracterizes label requirements.
+**59.** Correct: **D** — [4.1] Translating regulatory/ethical requirements into enforceable AI policy and governance is the **AI governance engineer**. Data/platform/MLOps engineers (**A**, **B**, **C**) are build/operate roles.
 
-**60.** Correct: **A** — [4.3] GDPR (Art. 22) grants rights over solely automated decisions with significant effects, including human review. HIPAA (B), PCI DSS (C), and SOX (D) do not.
-
-**61.** Correct: **B** — [5.2] Unusual usage spikes and prompt patterns are surfaced by anomaly detection on usage/prompt telemetry. Differential privacy (A), model signing (C), and output encoding (D) are not detection methods here.
-
-**62.** Correct: **A** — [3.1] Differential privacy adds calibrated statistical noise to limit what can be learned about any individual. Federated learning (B) keeps training data decentralized but adds no noise (and can still leak via updates); homomorphic encryption (C) computes over encrypted data without adding noise; rate limiting (D) is unrelated to training-data privacy.
-
-**63.** Correct: **C** — [2.3] Replacing a production model in the registry with a backdoored one is a model registry (supply-chain) compromise. Injection (A), membership inference (B), and sponge (D) do not fit.
-
-**64.** Correct: **D** — [1.5] Self-hosting shifts responsibility for securing/patching inference infrastructure and protecting model weights to the enterprise. Prompts (A), AUP (B), and UI (C) are already the enterprise's regardless of hosting.
-
-**65.** Correct: **A** — [5.3] A kill switch lets operators immediately disable an autonomous agent during an incident. An incident-response runbook (B) guides the process but does not itself stop the agent; per-user rate limiting (C) throttles but does not halt active actions; a model card (D) is documentation — none provide an immediate stop.
-
-**66.** Correct: **C** — [3.7] Running automated jailbreak/safety evals on every prompt or model change is continuous evaluation in CI/CD. Differential privacy (A), pen testing (B), and data lineage (D) do not catch safety regressions automatically.
-
-**67.** Correct: **D** — [2.4] Planting false facts into persistent agent memory is memory (conversation) poisoning. Extraction (A), evasion (B), and sponge (C) are different attacks.
-
-**68.** Correct: **A** — [4.4] Bias inherited from biased historical hiring data is historical/data bias in the training set. Latency (B), tokenization errors (C), and test-set overfitting (D) are not the source.
-
-**69.** Correct: **C** — [4.5] Open weights give transparency and control but move security, patching, and provenance responsibility to the adopter. A, B, and D are overstated or false generalizations.
-
-**70.** Correct: **B** — [5.1] Redacting/tokenizing sensitive fields with retention limits balances observability and privacy. Plaintext-forever (A) is risky, disabling logging (C) kills observability, and client-only logging (D) loses server-side evidence.
-
-**71.** Correct: **D** — [3.5] Vetting and trust-scoring ingestion sources with integrity checks before indexing defends against index poisoning. Encrypting the index at rest (A) protects stored data, output content moderation (B) screens responses, and raising the similarity threshold (C) only changes ranking — none establish whether the ingested source is trustworthy.
-
-**72.** Correct: **A** — [1.1] Confidently asserting a false, fabricated fact is hallucination. Overfitting (B), drift (C), and quantization (D) are different phenomena.
-
-**73.** Correct: **C** — [4.6] DLP that inspects and blocks sensitive data sent to GenAI services prevents regulated-data leakage. Output content moderation (A) screens model responses, model signing (B) verifies artifact integrity, and SSO/MFA (D) authenticates users to the internal tool — none stop employees pasting regulated data into external services.
-
-**74.** Correct: **B** — [2.2] A user typing override instructions directly into the prompt is direct prompt injection. Indirect (A) comes via processed data; inversion (C) and poisoning (D) are different attacks.
-
-**75.** Correct: **B** — [5.4] Versioned backups of models, indexes, and configs enable fast rollback after corruption or a bad deploy. Autoscaling (A) adds capacity but cannot restore a corrupted index, disabling guardrails (C) is harmful, and encrypting the index at rest (D) protects confidentiality — none provide a known-good state to recover to.
-
-**76.** Correct: **D** — [3.6] Prompt hardening with structured templates and delimiters separates trusted instructions from untrusted input, reducing injection. Output encoding (A) handles responses, input rate limiting (B) caps volume, and fine-tuning on more data (C) does not structurally distinguish system instructions from user input.
-
-**77.** Correct: **B** — [2.5] Cross-tenant leakage in a shared vector store points to missing tenant isolation — namespace or partition separation so one customer's queries cannot retrieve another's chunks. Output encoding (A) handles rendering, unbounded consumption (C) is a resource concern, and model extraction (D) is a cloning attack — none describe the multi-tenancy isolation failure.
-
-**78.** Correct: **C** — [4.5] Reviewing data licensing and EULA/usage rights before commercial fine-tuning prevents license violations. Penetration testing (A), bias/fairness auditing (B), and threat modeling (D) are all valuable reviews but address security, fairness, and architecture risk — not the legal right to use the dataset commercially.
-
-**79.** Correct: **A** — [1.4] As Domain 1 frames it, AI trustworthiness extends the CIA triad with safety, privacy, and fairness. AAA (B) is a classic access-control model, not an AI-specific extension; scalability/latency/throughput (C) and portability/redundancy/elasticity (D) are performance and architecture attributes.
-
-**80.** Correct: **D** — [5.3] The first step for a leaked key is to revoke and rotate it immediately. Retraining (A), future rate limiting (B), and reporting before acting (C) do not stop active abuse now.
-
-**81.** Correct: **B** — [3.4] Per-agent identity with scoped least-privilege credentials enables attribution and limits blast radius. Shared accounts (A), no auth (C), and admin-for-all (D) violate least privilege.
-
-**82.** Correct: **A** — [2.1] Normal behavior except on a hidden trigger is a backdoor (trojan) model. Membership inference (B), extraction (C), and sponge (D) describe other attacks.
-
-**83.** Correct: **C** — [4.2] Formally documenting and signing off on tolerating a residual risk is risk acceptance, recorded in the risk register. Avoidance (A), transference (B), and "exploitation" (D) are different (or invalid) treatments.
-
-**84.** Correct: **D** — [5.5] A post-incident review that feeds lessons into detections and controls most improves future resilience. Deleting logs (A) destroys evidence, deploying a new model version without root-cause analysis (B) risks reintroducing the issue, and disabling monitoring (C) reduces visibility — all weaken resilience.
-
-**85.** Correct: **A** — [3.3] Input guardrails validate and filter prompts before they reach the model. Output guardrails (B) act on the model's responses (the wrong side for pre-screening prompts), cryptographic model signing (C) verifies artifact integrity, and a model card (D) is documentation — none filter inbound prompts.
-
-**86.** Correct: **C** — [2.2] The root issue is the developer's overreliance on a model-fabricated (hallucinated) dependency, which OWASP maps to LLM09 Misinformation ("package hallucination"/slopsquatting). LLM03 Supply Chain (B) is the tempting distractor, but it covers compromise of *legitimate* third-party components, models, or data — here no real package was tampered with; the model invented a non-existent one and the developer trusted it. Prompt injection (A) and system-prompt leakage (D) do not fit the hallucination-plus-overreliance pattern.
-
-**87.** Correct: **D** — [1.3] A capability useful for both defense and attack is dual-use. Non-determinism (A), overfitting (B), and drift (C) describe other properties.
-
-**88.** Correct: **B** — [4.4] Comparing true-positive rates across groups evaluates a fairness metric (e.g., equalized odds / equal opportunity). Latency (A), throughput (C), and embedding size (D) are not fairness measures.
-
-**89.** Correct: **B** — [5.2] Mapping AI-specific detections to MITRE ATLAS aligns them to a recognized taxonomy of adversary techniques against ML. PCI DSS (A), the OSI model (C), and ITIL (D) are not AI-attack taxonomies.
-
-**90.** Correct: **C** — [3.7] Running automated evals/benchmarks against a curated test and regression set objectively compares safety and accuracy. File size (A), release date (B), and context window (D) are not measures of model quality.
+**60.** Correct: **B** — [4.2] A model that performs unfairly for an underrepresented region exhibits **introduction of bias** affecting fairness and performance. Excessive agency (**A**), insecure output handling (**C**), and model theft (**D**) describe different risks.

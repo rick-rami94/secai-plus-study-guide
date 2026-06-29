@@ -1,97 +1,76 @@
-# Frameworks Quick Reference — AI Security Frameworks Cheat Sheet
+# Frameworks Quick Reference — AI Threat-Modeling & Governance Cheat Sheet
 
-> ⚠️ **UNOFFICIAL / COMMUNITY-MAINTAINED** study aid — not affiliated with or endorsed by CompTIA or any standards body. No fabricated IDs, clause numbers, or stats; version-sensitive items flagged **(verify)**. Blueprint: [`../exam-objectives.md`](../exam-objectives.md). Deeper detail: [`../study-guide/frameworks-crosswalk.md`](../study-guide/frameworks-crosswalk.md).
+> Unofficial study material aligned to CompTIA SecAI+ CY0-001 V1 objectives. See [../exam-objectives.md](../exam-objectives.md).
+
+Covers the official named resources in **2.1** (threat modeling) and **4.3** (compliance), plus a **2.2–2.4 controls** quick list. No fabricated IDs, clause numbers, or stats; uncertain items flagged **(verify)**.
 
 ---
 
 ## OWASP Top 10 for LLM Applications (2025)
 
-| ID | Name | One-line | One defense |
-|---|---|---|---|
-| **LLM01** | Prompt Injection | Direct or indirect input overrides intended instructions. | Instruction/data separation, guardrails, least-privilege tools. |
-| **LLM02** | Sensitive Information Disclosure | Model reveals PII/secrets/proprietary data via output/memorization. | Data minimization, output redaction (DLP), retrieval access control. |
-| **LLM03** | Supply Chain | Poisoned/tampered/typosquatted models, datasets, plugins, deps. | Provenance & signature verification, MLBOM/SBOM, scanning. |
-| **LLM04** | Data and Model Poisoning | Tainted training/fine-tuning/embedding data → backdoors, bias. | Data provenance/validation, anomaly detection, trusted pipelines. |
-| **LLM05** | Improper Output Handling | Downstream trusts output → XSS/SQLi/SSRF/RCE. | Treat output as untrusted; encode/validate; parameterize; sandbox. |
-| **LLM06** | Excessive Agency | Too much permission/autonomy → harmful agent actions. | Least privilege, tool allow-listing, scoped identity, human gates. |
-| **LLM07** | System Prompt Leakage | System prompt (secrets/guardrail logic) exposed, aids bypass. | No secrets in prompts; enforce controls server-side. |
-| **LLM08** | Vector and Embedding Weaknesses | RAG flaws — poisoning, cross-tenant leakage, embedding inversion. | Per-doc/tenant retrieval authz, vet index, secure vector DB. |
-| **LLM09** | Misinformation | False/hallucinated/misleading output users overrely on. | Grounding/RAG with trusted sources, citations, human review. |
-| **LLM10** | Unbounded Consumption | Resource abuse — model DoS, "denial of wallet," cost harvesting. | Rate limits/quotas, size caps, cost monitoring, timeouts. |
-
----
-
-## NIST AI RMF (AI 100-1) — four functions
-
-| Function | Purpose (plain English) |
-|---|---|
-| **GOVERN** | Cross-cutting culture, policies, roles, risk tolerance, oversight, supply-chain governance. |
-| **MAP** | Establish context — intended use, stakeholders, categorization, capabilities/limits, impacts. |
-| **MEASURE** | Analyze/assess/benchmark/monitor — metrics, testing/red-teaming, trustworthiness characteristics. |
-| **MANAGE** | Prioritize and act — risk treatment, response/recovery, incident handling, ongoing improvement. |
-
-- **Voluntary** and **outcome-based** (not a mandatory control checklist).
-- **Govern** is cross-cutting and wraps the other three.
-- **NIST AI 600-1** = the **Generative AI Profile** (companion that applies the RMF to GenAI) — know it exists.
-
----
-
-## EU AI Act — risk tiers + GPAI
-
-| Tier | Meaning | Obligation level |
+| ID | Name | One-liner |
 |---|---|---|
-| **Prohibited / Unacceptable** | Banned practices (e.g., certain social scoring, manipulative/exploitative systems — *verify exact list*). | **Banned** |
-| **High** | Sensitive domains (critical infra, employment, biometrics, essential services — *verify list*). | Strict: risk mgmt, data governance, technical docs, logging, human oversight, accuracy/robustness/cybersecurity, conformity assessment. |
-| **Limited** | Transparency-concern systems (chatbots, deepfakes/synthetic media). | **Transparency/disclosure** (tell users it's AI; label AI content). |
-| **Minimal** | Most other AI (spam filters, AI in games). | No mandatory obligations; voluntary codes. |
+| **LLM01** | Prompt Injection | Crafted input overrides intended instructions (direct or indirect). |
+| **LLM02** | Sensitive Information Disclosure | Model leaks PII, secrets, or proprietary data in output. |
+| **LLM03** | Supply Chain | Compromised third-party models, datasets, or components. |
+| **LLM04** | Data and Model Poisoning | Tampered training/fine-tuning/RAG data or model weights. |
+| **LLM05** | Improper Output Handling | Downstream systems trust unsanitized model output (XSS/SQLi/RCE). |
+| **LLM06** | Excessive Agency | Too much functionality, permissions, or autonomy granted. |
+| **LLM07** | System Prompt Leakage | System-prompt contents exposed/relied on for security. |
+| **LLM08** | Vector and Embedding Weaknesses | Flaws in RAG vector stores/embeddings (injection, leakage). |
+| **LLM09** | Misinformation | Hallucinated/false output, including unsafe overreliance. |
+| **LLM10** | Unbounded Consumption | Resource exhaustion / Model DoS / runaway cost. |
 
-- **GPAI (general-purpose AI):** baseline = technical docs, downstream info, EU copyright policy, training-data summary *(verify)*.
-- **GPAI with systemic risk:** added duties — model evaluation/adversarial testing, systemic-risk assessment & mitigation, serious-incident reporting, cybersecurity *(verify thresholds)*.
-- **Legally binding** (vs voluntary NIST AI RMF); extraterritorial reach; obligations phase in over time.
+## OWASP Machine Learning Security Top 10 (brief)
 
----
-
-## ISO/IEC 42001:2023 — AIMS
-
-- First international **management-system standard** for AI: establish/implement/maintain/improve an **AI Management System (AIMS)**; **certifiable** like ISO/IEC 27001.
-- Follows the ISO **Harmonized Structure** and **PDCA (Plan-Do-Check-Act)** continual-improvement cycle.
-- Annex-style controls by **theme** (AI policy, roles, **AI impact assessment**, data management, lifecycle/development, transparency, supplier relationships) — describe by theme, don't cite clause numbers unless verified.
-- **42001 = AIMS** (AI) is the sibling of **27001 = ISMS** (information security); both share PDCA, risk treatment, internal audit, management review. Related: **23894** (AI risk mgmt guidance), **22989** (AI terminology) *(verify)*.
+Separate ML-focused list (distinct from the LLM list). Themes include: **Input Manipulation** (adversarial examples), **Data Poisoning**, **Model Inversion**, **Membership Inference**, **Model Theft/Stealing**, **AI Supply Chain**, **Transfer Learning Attack**, **Model Skewing**, **Output Integrity Attack**, and corrupted-package/environment risks. Exact ordering/IDs **(verify)** against the current OWASP ML Security Top 10.
 
 ---
 
-## MITRE ATLAS
+## Threat-modeling resources (2.1)
 
-- **ATLAS** = *Adversarial Threat Landscape for Artificial-Intelligence Systems* — a knowledge base of real-world adversary **tactics & techniques** against AI/ML, modeled on **MITRE ATT&CK** ("ATT&CK for AI"). Also publishes **case studies** and a **mitigations** catalog.
-- Use for threat modeling, **ATLAS-mapped detections**, red/purple-team planning. Refer to techniques **by name**, not invented `AML.T####` IDs.
-
-**Tactics (adversary goal at each stage):** Reconnaissance · Resource Development · Initial Access · ML Model Access · Execution · Persistence · Defense Evasion · Discovery · Collection · ML Attack Staging · Exfiltration · Impact.
-
----
-
-## Documentation artifacts
-
-| Artifact | Documents | Key contents |
+| Resource | What it is | Why / how you use it |
 |---|---|---|
-| **Model card** | A single **model** | Intended use, performance metrics, limitations, ethical considerations. |
-| **System card** | The end-to-end **system/product** | How components interact, system-level safety evaluations, mitigations. |
-| **Datasheet** | A **dataset** | Provenance, composition, collection process, intended use, known bias. |
+| **MIT AI Risk Repository** | A consolidated, searchable database/taxonomy of documented AI risks from many sources. | Common reference of risk categories/causes; a checklist to ensure broad risk coverage. |
+| **MITRE ATLAS** | Adversarial Threat Landscape for AI Systems — ATT&CK-style knowledge base of real-world AI attacks. | Map adversary behavior across **tactics** (below) to techniques and case studies. |
+| **CVE AI Working Group** | Effort to adapt CVE/vulnerability disclosure practices to AI/ML systems. | Standardizes how AI vulnerabilities are identified, named, and tracked. |
+| **Threat-modeling frameworks** | General methods applied to AI (e.g., **STRIDE**, **attack trees**). | Systematically enumerate threats to AI components (model, data, pipeline, plug-ins). |
+
+**MITRE ATLAS tactics (by name — no AML.T IDs invented):** Reconnaissance · Resource Development · Initial Access · ML Model Access · Execution · Persistence · Privilege Escalation · Defense Evasion · Credential Access · Discovery · Collection · ML Attack Staging · Exfiltration · Impact. *(Tactic set evolves — verify current list.)*
+
+**STRIDE for AI:** Spoofing · Tampering (data/model integrity) · Repudiation · Information disclosure (inversion, membership inference, sensitive disclosure) · Denial of service (model DoS) · Elevation of privilege (excessive agency). **Attack trees:** decompose a goal (e.g., "exfiltrate model") into branching attacker steps.
 
 ---
 
-## Key defenses checklist for an LLM app
+## Governance & compliance (Domain 4)
 
-- [ ] Treat **all input and retrieved content as untrusted**; instruction/data separation (LLM01).
-- [ ] **Input & output guardrails** — filtering, moderation, prompt-injection/jailbreak detection (LLM01/05/09).
-- [ ] **Output is untrusted** — context-aware encode/escape, validate, parameterized queries, sandbox executed output (LLM05).
-- [ ] **Least privilege + tool allow-listing**, scoped per-agent identity, human-in-the-loop for high-impact actions (LLM06).
-- [ ] **No secrets in system prompts**; enforce controls server-side; assume the prompt leaks (LLM07).
-- [ ] **Per-document/tenant retrieval authz**, vet & monitor indexed content, secure the vector DB (LLM02/08).
-- [ ] **Supply-chain hygiene** — provenance, signing, MLBOM/SBOM, model/dependency scanning, safetensors over pickle (LLM03/04).
-- [ ] **Rate limits, quotas, size caps, cost monitoring/alerting**, timeouts (LLM10).
-- [ ] **Data minimization & sanitization**, PII redaction/DLP on training, RAG, and outputs (LLM02).
-- [ ] **Prompt/tool-call logging & monitoring**; ATLAS-mapped detections; AI red-teaming & evals in CI/CD.
+| Resource | What it is | Key structure / why it matters |
+|---|---|---|
+| **NIST AI RMF (AIRMF)** | Voluntary AI Risk Management Framework (AI RMF 1.0). | Four core functions: **Govern · Map · Measure · Manage** (Govern is cross-cutting). |
+| **EU AI Act** | EU risk-based AI regulation. | Risk tiers: **Prohibited (unacceptable) · High · Limited · Minimal**, plus **GPAI** (general-purpose AI) obligations. |
+| **OECD AI Principles** | Intergovernmental values-based AI principles. | Promote trustworthy AI: inclusive growth, human-centered values/fairness, transparency, robustness/safety, accountability. |
+| **ISO/IEC 42001** | AI Management System (**AIMS**) standard. | Certifiable management-system standard for governing AI (plan-do-check-act style); specific clauses **(verify)**. |
+| **ISO/IEC 23894** | AI **risk management** guidance. | Applies ISO 31000 risk principles to AI; guidance (not certifiable); specific clauses **(verify)**. |
+
+**Other Domain-4 concepts**
+- **Data sovereignty** — data is subject to the laws/jurisdiction where it is collected/stored; constrains where AI data/models may reside or be processed.
+- **Sanctioned vs. unsanctioned / Shadow AI** — approved/governed AI tools vs. unapproved AI use (a form of Shadow IT); shadow AI risks data leakage and ungoverned exposure.
+- **Private vs. public models** — self-hosted/internal models with data kept in-org vs. third-party hosted models where prompts/data may leave the boundary.
 
 ---
 
-*Reconcile against official CompTIA SecAI+ objectives and primary sources before exam day. Items marked (verify) change between versions.*
+## Securing-AI controls quick list (2.2–2.4)
+
+| Category | Official controls | Purpose |
+|---|---|---|
+| **Model controls (2.2)** | Model evaluation · Model guardrails · **Prompt templates** · Guardrail testing & validation | Constrain and validate model behavior at the model layer. |
+| **Gateway controls (2.2)** | **Prompt firewalls** · Rate limits · Token limits · Input quotas (data size, quantity) · Modality limits · Endpoint access controls | Filter/throttle traffic in front of the model; blunt injection and DoS. |
+| **Access controls (2.3)** | Model access · Data access · Agent access · Network/API access | Enforce **least privilege** across who/what can reach model, data, agents, APIs. |
+| **Encryption (2.4)** | In transit · At rest · **In use** | Protect data confidentiality/integrity across all states. |
+| **Data safety (2.4)** | Anonymization · Classification labels · Redaction · Masking · Minimization | Reduce sensitive-data exposure before/around model use. |
+
+**Mnemonic:** *Model guards behavior · Gateway guards traffic · Access guards reach · Encryption guards state · Data-safety guards content.*
+
+---
+
+**Verify before exam day:** OWASP ML Security Top 10 exact IDs/ordering, current MITRE ATLAS tactic list, and ISO 42001/23894 clause specifics. These cheat sheets use names/structures only, never invented IDs, clause numbers, or statistics.
